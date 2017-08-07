@@ -24,6 +24,11 @@
 			<li><a href="#!">Total por mes</a></li>
 			<!--<li class="divider"></li>-->
 			</ul>
+			<ul id="dropdown3" class="dropdown-content">
+			<li><a href="index.php?modulo=orden&elemento=index.php">Nueva orden</a></li>
+			<li><a href="#!">Realizar pagos</a></li>
+			<!--<li class="divider"></li>-->
+			</ul>
 
 		<nav>
 		    <div class="nav-wrapper teal darken-2">
@@ -34,7 +39,7 @@
 		      <ul class="right hide-on-med-and-down">
 		        <li><a href="index.php?modulo=cliente&elemento=index.php"><i class="material-icons left large">supervisor_account</i>Cliente</a></li>
 		        <li><a href="index.php?modulo=medidas&elemento=index.php"><i class="material-icons left large">assignment</i>Medidas</a></li> 
-		        <li><a href="index.php?modulo=orden&elemento=index.php"><i class="material-icons left large">shopping_cart</i>Orden</a></li>
+		        <li><a class="dropdown-button" href="#!" data-activates="dropdown3"><i class="material-icons left large">shopping_cart</i>Orden<i class="material-icons right">arrow_drop_down</i></a></li>
 		       	<li><a class="dropdown-button" href="#!" data-activates="dropdown2"><i class="material-icons left">trending_down</i>Reportes<i class="material-icons right">arrow_drop_down</i></a></li>
 		      </ul>
 		      <ul class="side-nav" id="mobile-demo">

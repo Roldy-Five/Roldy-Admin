@@ -234,7 +234,7 @@ function insertar(){
 	})
 		.done(function(respuesta){
 			if(respuesta==false){
-                toastr["error"]("No se pudo insertar los datos!")
+                toastr["error"]("Este cliente ya tiene medidas!")
                 toastr.options = {
                   "closeButton": false,
                   "debug": false,
@@ -252,7 +252,8 @@ function insertar(){
                   "showMethod": "fadeIn",
                   "hideMethod": "fadeOut"
                 }
-               setTimeout("document.location=document.location",1500);
+                // exit;
+               setTimeout("document.location=document.location",2000);
             }else{
             	toastr["success"]("Datos insertados correctamente!");
                    $("#toast-container").addClass('container');
