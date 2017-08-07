@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="css/select2.css">
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
 	<script type="text/javascript">
-		alert("Ahora es esto");
+		alert("Ahora es esto vamos a programar.");
 	</script>
 	
 </head>
