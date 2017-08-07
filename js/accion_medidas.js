@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
 	$('.modal').modal();
-   // $('#cliente').material_select();
+   $('#tipo_prenda').material_select();
 
 
     document.getElementById("vestido").style.display="block";
@@ -213,16 +213,15 @@ function buscar_mocho(consulta){
 function insertar(){
 	setTimeout("document.location=document.location");
 	$('#principal form').on('submit',function(e){
-
 		e.preventDefault();
 		$.ajax({
 		url: 'modulos/medidas/insertar.php',
 		type: 'POST',
-		dataType:'json',
+		//dataType:'json',
 		data: $('#principal form').serialize(),
 	})
 		.done(function(respuesta){
-		alert(respuesta);
+		console.log(respuesta);
 	})	
 	})
 
