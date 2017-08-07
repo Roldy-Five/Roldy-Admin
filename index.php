@@ -61,7 +61,7 @@
 			if (file_exists($archivo) and !empty($_GET['modulo']) and !empty($_GET['elemento'])) {
 				include_once($archivo);
 			}else{
-				include_once("");
+				include_once("modulos/orden/index.php");
 			}
 		?>
 	</div>
