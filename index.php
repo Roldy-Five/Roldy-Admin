@@ -7,6 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/toastr.min.css">
+	<script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="node_modules/sweetalert/dist/sweetalert.css">
 </head>
 <body>
 
@@ -16,6 +18,7 @@
 			<li><a href="#!">Total por mes</a></li>
 			<!--<li class="divider"></li>-->
 			</ul>
+			
 			<ul id="dropdown2" class="dropdown-content">
 			<li><a href="#!">Ordenes por realizar</a></li>
 			<li><a href="#!">Total por mes</a></li>

@@ -119,7 +119,7 @@ $(document).on('keyup', '#caja_busqueda', function(){
 			          "showMethod": "fadeIn",
 			          "hideMethod": "fadeOut"
 			        }
-		                    setTimeout("document.location=document.location",1500);
+		            setTimeout("document.location=document.location",1500);
 		    }
 		})	
 
@@ -220,19 +220,69 @@ function editar(id){
 }
 
 function eliminar(id,identificacion){	
-	if(confirm('¿Está seguro que desea eliminar el registro con identificación ' + identificacion +' ?')){
-	//setTimeout("document.location=document.location");
-	var i = id;
+	swal({
+	  title: "",
+	  text: "¿Está seguro que desea eliminar el registro con identificación " + identificacion +" ?",
+	  type: "warning",
+	  showCancelButton: true,
+	  confirmButtonColor: "#DD6B55",
+	  confirmButtonText: "Yes, delete it!",
+	  cancelButtonText: "No, cancel plx!",
+	  closeOnConfirm: false,
+	  closeOnCancel: false
+	},
+	function(isConfirm){
+	  if (isConfirm) {
+	  	var i = id;
 		//$.post("modulos/cliente/eliminar.php",{id_cliente:i});
-		buscar_datos();
+		// buscar_datos();
 		$.ajax({
-		url: 'modulos/cliente/eliminar.php',
-		type: 'POST',
-		data:{id_cliente:i},
+			url: 'modulos/cliente/eliminar.php',
+			type: 'POST',
+			data:{id_cliente:i},
 		})
 		.done(function(respuesta){
-		setTimeout("document.location=document.location");
-	})	
-		}
+			if(respuesta=="bien"){
+				swal({
+				  title: "",
+				  text: "El registro no puede ser eliminado !!",
+				  timer: 1000,
+				  showConfirmButton: false,
+				  // type:"Cancelled"
+				});
+				
+			}else{
+				swal({
+				  title: "",
+				  text: "Se ha eliminado el registro correctamente !!",
+				  timer: 1000,
+				  showConfirmButton: false,
+				});
+				setTimeout("document.location=document.location", 1500);
+			}
+		})	
+	    // swal("Deleted!", "Your imaginary file has been deleted.", "success");
+	  } else {
+	  	swal({
+		  title: "",
+		  text: "No se ha eliminado el registro !!",
+		  timer: 1000,
+		  showConfirmButton: false,
+		  // type:"Cancelled"
+		});
+
+
+
+	    // swal("Cancelled", "Your imaginary file is safe :)", "error");
+	  }
+	});
+
+
+
+
+	// if(confirm('¿Está seguro que desea eliminar el registro con identificación ' + identificacion +' ?')){
+	// //setTimeout("document.location=document.location");
+	
+	// 	}
 }
 

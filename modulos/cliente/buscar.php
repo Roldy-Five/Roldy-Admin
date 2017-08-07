@@ -49,7 +49,7 @@
 			}
 			$salida.="</tbody></table>";
 		}else{
-			$salida.="<h5 class='red '>No se encontraron datos</h5>";
+			$salida.="<p class='pink-text lighten-5'>No se encontraron datos....</p>";
 		}
 	echo $salida;
 ?>

@@ -1,11 +1,9 @@
 <?php 
-
-
 ///////Libreria https://mpdf.github.io/reference/mpdf-functions/output.html
+  require_once ('../../mpdf60/mpdf.php');
 if(isset($_GET["orden_id"])){
-   include ('../../conexion.php');
+   require_once('../../conexion.php');
   $orden_id = $_GET["orden_id"];
-  require_once 'mpdf60/mpdf.php';
   $html="";
   $responsable = "";
   $total = "";
@@ -59,9 +57,12 @@ if(isset($_GET["orden_id"])){
       }
   $mpdf = new mPDF();
   $mpdf->debug = false;
-  //$css = file_get_contents('css/index.css');
-  // $mpdf->writeHTML($css, 1);
   $mpdf->writeHTML($html);
+  $mpdf->Output("Ya.pdf","I");
+}else{
+  $mpdf = new mPDF();
+  $mpdf->debug = false;
+  $mpdf->writeHTML("No hay orden para mostrar..");
   $mpdf->Output("Ya.pdf","I");
 }
  ?>
