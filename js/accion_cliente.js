@@ -226,8 +226,8 @@ function eliminar(id,identificacion){
 	  type: "warning",
 	  showCancelButton: true,
 	  confirmButtonColor: "#DD6B55",
-	  confirmButtonText: "Yes, delete it!",
-	  cancelButtonText: "No, cancel plx!",
+	  confirmButtonText: "Si",
+	  cancelButtonText: "No",
 	  closeOnConfirm: false,
 	  closeOnCancel: false
 	},

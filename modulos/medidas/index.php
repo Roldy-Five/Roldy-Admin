@@ -153,7 +153,7 @@
 					      </div>
 					       <div class="row ">
 
-   								<div class="col s1 offset-s9"><button class="modal-action modal-close waves-effect green btn-flat " onclick="insertar();"  ">Agregar</button></div>
+   								<div class="col s1 offset-s9"><button class="modal-action waves-effect green btn-flat " onclick="insertar();"  ">Agregar</button></div>
     						</div>
 					     
 			      </form>

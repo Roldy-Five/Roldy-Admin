@@ -219,7 +219,7 @@ $('#llenar').click(function(){
                       "showMethod": "fadeIn",
                       "hideMethod": "fadeOut"
                     }
-                    var url ="modulos/orden/vista.php?orden_id="+orden_id; 
+                   // var url ="modulos/orden/vista.php?orden_id="+orden_id; 
                      
                     // location.href="modulos/orden/vista.php?orden_id="+orden_id;
                     window.open("modulos/orden/vista.php?orden_id="+orden_id);

@@ -211,18 +211,75 @@ function buscar_mocho(consulta){
 
 //insertar las medidas
 function insertar(){
-	setTimeout("document.location=document.location");
+	//setTimeout("document.location=document.location");
 	$('#principal form').on('submit',function(e){
 		e.preventDefault();
-		$.ajax({
+		var cin = $('#cintura');
+		var cad = $('#cadera');
+		if (cin.val() ==""){
+			 cin.attr("style","border-bottom: 1px solid red");
+			}
+		else if(cad.val()==""){
+		cin.attr("style","border-bottom: 1px solid gray");
+		cad.attr("style","border-bottom: 1px solid red");
+		}
+		else{
+			cin.attr("style","border-bottom: 1px solid gray");
+			cad.attr("style","border-bottom: 1px solid gray");
+			$.ajax({
 		url: 'modulos/medidas/insertar.php',
 		type: 'POST',
 		//dataType:'json',
 		data: $('#principal form').serialize(),
 	})
 		.done(function(respuesta){
-		console.log(respuesta);
-	})	
+			if(respuesta==false){
+                toastr["error"]("No se pudo insertar los datos!")
+                toastr.options = {
+                  "closeButton": false,
+                  "debug": false,
+                  "newestOnTop": false,
+                  "progressBar": true,
+                  "positionClass": "toast-bottom-center",
+                  "preventDuplicates": false,
+                  "onclick": null,
+                  "showDuration": "300",
+                  "hideDuration": "1000",
+                  "timeOut": "5000",
+                  "extendedTimeOut": "1000",
+                  "showEasing": "swing",
+                  "hideEasing": "linear",
+                  "showMethod": "fadeIn",
+                  "hideMethod": "fadeOut"
+                }
+               setTimeout("document.location=document.location",1500);
+            }else{
+            	toastr["success"]("Datos insertados correctamente!");
+                   $("#toast-container").addClass('container');
+                    // toastr["success"]("Se ha generado su orden!", "Notificaciones")
+                    toastr.options = {
+                      "closeButton": false,
+                      "debug": false,
+                      "newestOnTop": false,
+                      "progressBar": true,
+                      "positionClass": "toast-top-center",
+                      "preventDuplicates": false,
+                      "onclick": null,
+                      "showDuration": "300",
+                      "hideDuration": "1000",
+                      "timeOut": "5000",
+                      "extendedTimeOut": "1000",
+                      "showEasing": "swing",
+                      "hideEasing": "linear",
+                      "showMethod": "fadeIn",
+                      "hideMethod": "fadeOut"
+                    }
+                   setTimeout("document.location=document.location",1500);
+            }
+	})
+		}
+
+		
 	})
 
 }
@@ -244,11 +301,7 @@ function mostrar(cliente_id){
 
 //editar las medidas
 function editar(cliente_id,medidas_id,vestido_id){
-	setTimeout("document.location=document.location");
-	var cliente_id = cliente_id;
-	var medidas_id = medidas_id;
-	var vestido_id = vestido_id;
-
+	$('#r form').on('submit',function(e){
 	//var cliente = document.getElementById("cliente1").value
 	var cadera = document.getElementById("cadera1").value
 	var cintura = document.getElementById("cintura1").value
@@ -267,16 +320,56 @@ function editar(cliente_id,medidas_id,vestido_id){
 	var corto_a = document.getElementById("corto_a1").value
 	var tc_a = document.getElementById("tc_a1").value
 	var largo_a = document.getElementById("largo_a1").value
-
-	$('#r form').on('submit',function(e){
 		e.preventDefault();
 		$.ajax({
 		url: 'modulos/medidas/editar.php',
 		type: 'POST',
 		data:{cliente_id:cliente_id,medidas_id:medidas_id,vestido_id:vestido_id,cadera:cadera,cintura:cintura,largo_blusa:largo_blusa,largo_falda:largo_falda,largo_mocho:largo_mocho,largo_vestido:largo_vestido,talle:talle,espalda:espalda,busto:busto,largo_pantalon:largo_pantalon,ancho_muslo:ancho_muslo,corto_l:corto_l,tc_l:tc_l,largo_l:largo_l,corto_a:corto_a,tc_a:tc_a,largo_a:largo_a},
 		})
-		.done(function(respuesta){
-		alert(respuesta);	
+				.done(function(respuesta){
+			if(respuesta==false){
+                toastr["error"]("No se pudo actualizar los datos!")
+                toastr.options = {
+                  "closeButton": false,
+                  "debug": false,
+                  "newestOnTop": false,
+                  "progressBar": true,
+                  "positionClass": "toast-bottom-center",
+                  "preventDuplicates": false,
+                  "onclick": null,
+                  "showDuration": "300",
+                  "hideDuration": "1000",
+                  "timeOut": "5000",
+                  "extendedTimeOut": "1000",
+                  "showEasing": "swing",
+                  "hideEasing": "linear",
+                  "showMethod": "fadeIn",
+                  "hideMethod": "fadeOut"
+                }
+                setTimeout("document.location=document.location",1500);
+            }else{
+            	toastr["success"]("Datos actualizados correctamente!");
+                   $("#toast-container").addClass('container');
+                    // toastr["success"]("Se ha generado su orden!", "Notificaciones")
+                    toastr.options = {
+                      "closeButton": false,
+                      "debug": false,
+                      "newestOnTop": false,
+                      "progressBar": true,
+                      "positionClass": "toast-top-center",
+                      "preventDuplicates": false,
+                      "onclick": null,
+                      "showDuration": "300",
+                      "hideDuration": "1000",
+                      "timeOut": "5000",
+                      "extendedTimeOut": "1000",
+                      "showEasing": "swing",
+                      "hideEasing": "linear",
+                      "showMethod": "fadeIn",
+                      "hideMethod": "fadeOut"
+                    }
+                    setTimeout("document.location=document.location",1500);
+            }
 	})
 	})	
 

@@ -1,4 +1,5 @@
 <?php 
+if(isset($_POST['cliente_id'])){
 	include "../../conexion.php";
 	$cliente_id = $_POST['cliente_id'];
 	$medidas_id = $_POST['medidas_id'];
@@ -13,7 +14,7 @@
 	largo_blusa='$_POST[largo_blusa]'
 	WHERE cliente_id = '$cliente_id'
 	";
-	mysqli_query($conn,$s) or die(mysqli_error($conn));
+	mysqli_query($conn,$s) ;
 
 //actualizo vestido
 	$s=
@@ -24,7 +25,7 @@
 	busto='$_POST[busto]'
 	WHERE medidas_id = '$medidas_id'
 	";
-	mysqli_query($conn,$s) or die(mysqli_error($conn));
+	mysqli_query($conn,$s) ;
 
 //actualizo pantalon
 	$s=
@@ -33,7 +34,7 @@
 	ancho_muslo='$_POST[ancho_muslo]'
 	WHERE medidas_id = '$medidas_id'
 	";
-	mysqli_query($conn,$s) or die(mysqli_error($conn));
+	mysqli_query($conn,$s) ;
 
 //actualizo largo_manga
 	$s=
@@ -43,7 +44,7 @@
 	largo='$_POST[largo_l]'
 	WHERE vestido_id = '$vestido_id'
 	";
-	mysqli_query($conn,$s) or die(mysqli_error($conn));
+	mysqli_query($conn,$s) ;
 
 //actualizo ancho_manga
 	$s=
@@ -53,11 +54,15 @@
 	largo='$_POST[largo_a]'
 	WHERE vestido_id = '$vestido_id'
 	";
-	mysqli_query($conn,$s) or die(mysqli_error($conn));
+	mysqli_query($conn,$s) ;
 
+	if(mysqli_error($conn)){
+				print(0);
+			}
+			else{
+				print(1);
+			}
 
-	
-	//mysqli_query($conn,$s) or die(mysqli_error($conn));
-	echo $cliente_id;
+}
 
 ?>
