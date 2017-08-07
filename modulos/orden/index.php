@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="css/select2.css">
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
 	<script type="text/javascript">
-		alert("Ya estamos en git");
+		alert("Ahora es esto");
 	</script>
 	
 </head>
