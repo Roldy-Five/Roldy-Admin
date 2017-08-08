@@ -7,8 +7,8 @@
 	mysqli_query($conn,$s);
 
 	if(mysqli_error($conn)){
-		print("mal");
+		print(0);
 	}else{
-		print("bien");
+		print(1);
 	}
  ?>

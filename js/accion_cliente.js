@@ -226,10 +226,11 @@ function eliminar(id,identificacion){
 		$.ajax({
 			url: 'modulos/cliente/eliminar.php',
 			type: 'POST',
+			//dataType: 'html',
 			data:{id_cliente:i},
 		})
 		.done(function(respuesta){
-			if(respuesta=="bien"){
+			if(respuesta==true){
 				swal({
 				  title: "",
 				  text: "Se ha eliminado el registro correctamente !!",
@@ -238,6 +239,7 @@ function eliminar(id,identificacion){
 				  // type:"Cancelled"
 				});
 				setTimeout("document.location=document.location", 1500);
+<<<<<<< HEAD
 				
 			}else{
 				swal({
@@ -247,6 +249,16 @@ function eliminar(id,identificacion){
 				  showConfirmButton: false,
 				});
 			
+=======
+			}else if(respuesta==false){
+				swal({
+				  title: "",
+				  text: "El registro no puede ser eliminado !!",
+				  timer: 1000,
+				  showConfirmButton: false,
+				});
+				
+>>>>>>> c77674419325b79dcff912d1fd5c79253d945d28
 			}
 		})	
 	    // swal("Deleted!", "Your imaginary file has been deleted.", "success");

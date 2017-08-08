@@ -20,10 +20,9 @@
 		$resultado = $conn->query($query);
 		if ($resultado->num_rows > 0) {
 
-			$salida.="<h5 class=''><p>Medidas para blusa</p></h5><table class='striped responsive-table' border='1'>
+			$salida.="<h5><p>Medidas para blusa</p></h5><table class='striped responsive-table centered'>
 		<thead>  
     <tr>
-    	<th style='width:200px;'>Opciones</th>
         <th>Nombre Completo</th>
         <th>Cadera</th>
         <th>Cintura</th>
@@ -33,15 +32,13 @@
         <th>Busto</th>
         <th colspan='3'>Largo de manga</th>
         <th colspan='3'>Ancho de manga</th>
+    	<th>Opciones</th>
     </tr>
     </thead><tbody>";
 
 			while($row=$resultado->fetch_assoc()){
 		$salida.="
 				<tr id='cuerpo'>
-					<td>
-						<a href='#modal2' id='llenar' class='amber darken-2 btn' onclick='mostrar(".$row['id'].");'> <i class='material-icons amber darken-2 tiny'>create</i></a></div>
-					</td>
 					<td id='identifica'>".$row['nombre']."</td>
 					<td>".$row['cadera']."</td>
 					<td>".$row['cintura']."</td>
@@ -57,6 +54,10 @@
 					<td>Corto: ".$row['corto_a']."</td>
 					<td>3/4: ".$row['3_4_a']."</td>
 					<td>Largo: ".$row['largo_a']."</td>		
+					<td>
+						<a href='#modal2' id='llenar' class='btn-floating btn-large waves-effect waves-light amber darken-2 tooltipped' data-position='top' data-delay='50' data-tooltip='Editar' onclick='mostrar(".$row['id'].");'> <i class='material-icons'>create</i>
+						</a>
+					</td>
 					
 				</tr>";
 			}

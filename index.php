@@ -26,7 +26,7 @@
 			</ul>
 			<ul id="dropdown3" class="dropdown-content">
 			<li><a href="index.php?modulo=orden&elemento=index.php">Nueva orden</a></li>
-			<li><a href="#!">Realizar pagos</a></li>
+			<li><a href="index.php?modulo=abonos&elemento=index.php">Realizar pagos</a></li>
 			<!--<li class="divider"></li>-->
 			</ul>
 
