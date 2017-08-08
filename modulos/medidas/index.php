@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/select2.css">
 </head>
 
-<body>
+<body style="background-color: red">
 <div id="l"></div>
 	<div class="row">
 		<div class="input-field col s4">
