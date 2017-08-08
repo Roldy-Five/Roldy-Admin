@@ -14,26 +14,27 @@
 	}
 		$resultado = $conn->query($query);
 		if ($resultado->num_rows > 0) {
-			$salida.="<h5 class=''><p>Medidas para short</p></h5><table class='striped responsive-table' border='1'>
+			$salida.="<h5 class=''><p>Medidas para short</p></h5><table class='striped responsive-table centered'>
 		<thead>  
     <tr>
-    	<th>Opciones</th>
         <th>Nombre Completo</th>
         <th>Cadera</th>
         <th>Cintura</th>
         <th>largo</th>
+    	<th>Opciones</th>
     </tr>
     </thead><tbody>";
 			while($row=$resultado->fetch_assoc()){
 		$salida.="
 				<tr id='cuerpo'>
-					<td>
-						<a href='#modal2' id='llenar' class='amber darken-2 btn' onclick='mostrar(".$row['id'].");'> <i class='material-icons amber darken-2 tiny'>create</i></a></div>
-					</td>
 					<td id='identifica'>".$row['nombre']."</td>
 					<td>".$row['cadera']."</td>
 					<td>".$row['cintura']."</td>
 					<td>".$row['largo_mocho']."</td>
+					<td>
+						<a href='#modal2' id='llenar' class='btn-floating btn-large waves-effect waves-light amber darken-2 tooltipped' data-position='top' data-delay='50' data-tooltip='Editar' onclick='mostrar(".$row['id'].");'> <i class='material-icons'>create</i>
+						</a>
+					</td>
 				</tr>";
 			}
 			$salida.="</tbody></table>";

@@ -10,7 +10,7 @@ $(document).ready(function(){
     document.getElementById("pantalon").style.display="none";
     document.getElementById("falda").style.display="none";
     document.getElementById("short").style.display="none";
-    buscar_vestido();
+    // buscar_vestido();
     $(document).on('keyup', '#vestido', function(){
 				var valor = $(this).val();
 				if (valor != "") {

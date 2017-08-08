@@ -239,26 +239,27 @@ function eliminar(id,identificacion){
 		$.ajax({
 			url: 'modulos/cliente/eliminar.php',
 			type: 'POST',
+			//dataType: 'html',
 			data:{id_cliente:i},
 		})
 		.done(function(respuesta){
-			if(respuesta=="bien"){
-				swal({
-				  title: "",
-				  text: "El registro no puede ser eliminado !!",
-				  timer: 1000,
-				  showConfirmButton: false,
-				  // type:"Cancelled"
-				});
-				
-			}else{
+			if(respuesta==true){
 				swal({
 				  title: "",
 				  text: "Se ha eliminado el registro correctamente !!",
 				  timer: 1000,
 				  showConfirmButton: false,
+				  // type:"Cancelled"
 				});
 				setTimeout("document.location=document.location", 1500);
+			}else if(respuesta==false){
+				swal({
+				  title: "",
+				  text: "El registro no puede ser eliminado !!",
+				  timer: 1000,
+				  showConfirmButton: false,
+				});
+				
 			}
 		})	
 	    // swal("Deleted!", "Your imaginary file has been deleted.", "success");
