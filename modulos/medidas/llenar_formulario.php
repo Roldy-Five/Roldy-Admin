@@ -185,7 +185,7 @@ include "../../conexion.php";
 
 					      <div class='row'>
 
-   								<div class='col s1 offset-s9'><button class='modal-action modal-close waves-effect amber darken-2 btn-flat' onclick='editar($cliente_id,$medidas_id,$vestido_id)'>Actualizar</button></div>
+   								<div class='col s1 offset-s4'><button class='modal-action modal-close waves-effect amber darken-2 btn-flat' onclick='editar($cliente_id,$medidas_id,$vestido_id)'>Actualizar</button></div>
     						</div>
 					      
 					      

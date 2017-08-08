@@ -239,17 +239,6 @@ function eliminar(id,identificacion){
 				  // type:"Cancelled"
 				});
 				setTimeout("document.location=document.location", 1500);
-<<<<<<< HEAD
-				
-			}else{
-				swal({
-				  title: "",
-				  text: "No se ha podido eliminar el cliente !!",
-				  timer: 1000,
-				  showConfirmButton: false,
-				});
-			
-=======
 			}else if(respuesta==false){
 				swal({
 				  title: "",
@@ -257,8 +246,7 @@ function eliminar(id,identificacion){
 				  timer: 1000,
 				  showConfirmButton: false,
 				});
-				
->>>>>>> c77674419325b79dcff912d1fd5c79253d945d28
+
 			}
 		})	
 	    // swal("Deleted!", "Your imaginary file has been deleted.", "success");

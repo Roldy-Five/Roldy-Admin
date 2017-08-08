@@ -15,7 +15,7 @@
 			<label>Buscar</label>
 			<input type="text" name="caja_busqueda" id="caja_busqueda">
 		</div>
-		<div class="input-field col s3  offset-s4">
+		<div class="input-field col s3  offset-s2">
 			<br>
 			<a class="waves-effect waves-light btn green" href="#modal1" "> Nuevo cliente</a>	
 		</div>
@@ -77,8 +77,8 @@
 					      	</div>
 					      </div>
 					      <div class="row ">
-   								<div class="col s1 offset-s9">
-   								<button type="submit" class="modal-action  waves-effect green btn-flat">Agregar</button></div>
+   								<div class="col s1 offset-s5">
+   								<button type="submit" class="modal-action  waves-effect green btn-flat" >Agregar</button></div>
     						</div>
 			      </form>
 		      </div>

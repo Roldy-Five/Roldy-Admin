@@ -59,13 +59,13 @@
 				<input type="number" id="precio" name="precio" class="limpiar">
 				<label for="">Precio</label>
 			</div>
-			<div class="input-field col s7">
+			<div class="input-field col s5">
 				<!--<textarea id="descripcion" class="materialize-textarea"></textarea>-->
 				<input type="text" id="descripcion" name="descripcion" class="limpiar">
          		<label for="descripcion">Descripcion</label>
 			</div>
 			<div class="input-field col s2 ">
-				<a class="btn-floating btn-large waves-effect waves-light red" id="llenar"><i class="material-icons">add</i></a>
+				<a class="btn-floating btn-large waves-effect waves-light green" id="llenar"><i class="material-icons">add</i></a>
 			</div>
 		</div>
 		<table class='striped responsive-table centered' id="tabla">

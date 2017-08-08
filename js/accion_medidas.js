@@ -11,14 +11,14 @@ $(document).ready(function(){
     document.getElementById("falda").style.display="none";
     document.getElementById("short").style.display="none";
     // buscar_vestido();
-    $(document).on('keyup', '#vestido', function(){
-				var valor = $(this).val();
-				if (valor != "") {
-					buscar_vestido(valor);
-				}else{
-					buscar_vestido();
-				}
-			})
+   //  $(document).on('keyup', '#vestido', function(){
+			// 	var valor = $(this).val();
+			// 	if (valor != "") {
+			// 		buscar_vestido(valor);
+			// 	}else{
+			// 		buscar_vestido();
+			// 	}
+			// })
 
     //activar todas las cajas de texto
 	 

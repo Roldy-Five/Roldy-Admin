@@ -21,7 +21,7 @@
 			<input type="text" name="falda" id="falda" value="">
 			<input type="text" name="short" id="short" value="">
 		</div>
-		<div class="input-field col s2 offset-s1">
+		<div class="input-field col s2 ">
 			<select id="tipo_prenda">
 				<option value="1">Vestido</option>
 				<option value="2">Blusa</option>
@@ -31,7 +31,7 @@
 			</select>
 			
 		</div>
-		<div class="input-field col s3  offset-s2">
+		<div class="input-field col s3 ">
 			<br>
 			<a class="waves-effect waves-light btn green" href="#modal1" ">Añadir medidas</a>	
 		</div>
@@ -153,7 +153,7 @@
 					      </div>
 					       <div class="row ">
 
-   								<div class="col s1 offset-s9"><button class="modal-action waves-effect green btn-flat " onclick="insertar();"  ">Agregar</button></div>
+   								<div class="col s1 offset-s5"><button class="modal-action waves-effect green btn-flat " onclick="insertar();"  ">Agregar</button></div>
     						</div>
 					     
 			      </form>

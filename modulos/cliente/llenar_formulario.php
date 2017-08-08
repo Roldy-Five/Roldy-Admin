@@ -77,7 +77,7 @@ include "../../conexion.php";
 					      </div>
 					      <div class='row'>
 
-   								<div class='col s1 offset-s9'><button class='modal-action modal-close waves-effect amber darken-2 btn-flat' type='submit' onclick='editar($id);' >Actualizar</button></div>
+   								<div class='col s1 offset-s4'><button class='modal-action modal-close waves-effect amber darken-2 btn-flat' type='submit' onclick='editar($id);' >Actualizar</button></div>
      					
     						</div>
 			      </form>
