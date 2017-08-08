@@ -100,8 +100,8 @@ $(document).on('keyup', '#caja_busqueda', function(){
 			    }
 			    setTimeout("document.location=document.location",1500);
 			}else{
+				$("#toast-container").addClass('container');
 				toastr["success"]("Datos insertados correctamente!");
-			       $("#toast-container").addClass('container');
 			        toastr.options = {
 			          "closeButton": false,
 			          "debug": false,
@@ -119,22 +119,9 @@ $(document).on('keyup', '#caja_busqueda', function(){
 			          "showMethod": "fadeIn",
 			          "hideMethod": "fadeOut"
 			        }
-		            setTimeout("document.location=document.location",1500);
+		        setTimeout("document.location=document.location",1500);
 		    }
-		})	
-
-
-
-
-
-
-
-
-
-
-
-
-
+		});	
 		}
 
 
@@ -245,20 +232,21 @@ function eliminar(id,identificacion){
 			if(respuesta=="bien"){
 				swal({
 				  title: "",
-				  text: "El registro no puede ser eliminado !!",
+				  text: "Se ha eliminado el registro correctamente !!",
 				  timer: 1000,
 				  showConfirmButton: false,
 				  // type:"Cancelled"
 				});
+				setTimeout("document.location=document.location", 1500);
 				
 			}else{
 				swal({
 				  title: "",
-				  text: "Se ha eliminado el registro correctamente !!",
+				  text: "No se ha podido eliminar el cliente !!",
 				  timer: 1000,
 				  showConfirmButton: false,
 				});
-				setTimeout("document.location=document.location", 1500);
+			
 			}
 		})	
 	    // swal("Deleted!", "Your imaginary file has been deleted.", "success");
