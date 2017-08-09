@@ -68,11 +68,11 @@
 
 					      <div class="row">				      
 						      <div class="input-field col s6">
-						          <input id="telefono_1" name="telefono_1" type="text" class="validate">
+						          <input id="telefono_1" name="telefono_1" type="text" class="validate solo-numero">
 						          <label for="last_name">* Telefono 1</label>
 						      </div>
 						      <div class="input-field col s6">
-						          	<input id="telefono_2" name="telefono_2" type="text" class="validate">
+						          	<input id="telefono_2" name="telefono_2" type="text" class="validate solo-numero">
 						          	<label for="last_name">Telefono 2</label>
 					      	</div>
 					      </div>

@@ -1,30 +1,7 @@
 $(document).ready(function(){
 	buscar_datos();
+	$('select').material_select();
 	$('.modal').modal();
-	$('.datepicker').pickadate({
-    // The title label to use for the month nav buttons
-        labelMonthNext: 'Mes siguiente',
-        labelMonthPrev: 'Mes anterior',
-
-// The title label to use for the dropdown selectors
-        labelMonthSelect: 'Selecciona un mes',
-        labelYearSelect: 'Selecciona un año',
-
-// Months and weekdays
-        monthsFull: [ 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre' ],
-        monthsShort: [ 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic' ],
-        weekdaysFull: [ 'Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado' ],
-        weekdaysShort: [ 'Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab' ],
-
-// Materialize modified
-        weekdaysLetter: [ 'D', 'L', 'M', 'X', 'J', 'V', 'S' ],
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 15, // Creates a dropdown of 15 years to control year,
-    today: 'Hoy',
-    clear: 'Limpiar',
-    close: 'Cerrar',
-    closeOnSelect: false // Close upon selecting a date,
-  });
 })
 function buscar_datos(consulta){
 	$.ajax({
@@ -59,34 +36,26 @@ function realizar_abono(orden_id, deuda){
 		e.preventDefault();
 		var responsable = $('#responsable');
 		var abonos = $('#abonos');
-		var fecha = $('#fecha');
 		if (responsable.val() ==""){
 			 responsable.attr("style","border-bottom: 1px solid red");
 		}else if(abonos.val()==""){
 			responsable.attr("style","border-bottom: 1px solid gray");
 			abonos.attr("style","border-bottom: 1px solid red");
 		}else if(deuda < $("#abonos").val()){
-
-			alert(abonos.val())
+			//alert(abonos.val())
 			swal("El abono no puede ser mayor a la deuda.");
 			responsable.attr("style","border-bottom: 1px solid gray");
 			abonos.attr("style","border-bottom: 1px solid red");
-		}else if(fecha.val()==""){
-			responsable.attr("style","border-bottom: 1px solid gray");
-			abonos.attr("style","border-bottom: 1px solid gray");
-			fecha.attr("style","border-bottom: 1px solid red");
 		}else {
 			responsable.attr("style","border-bottom: 1px solid gray");
 			abonos.attr("style","border-bottom: 1px solid gray");
-			fecha.attr("style","border-bottom: 1px solid gray");
 			var res = $('#responsable').val();
 			var abo = $('#abonos').val();
-			var fec = $('#fecha').val();
 			$('#abonar').addClass('disabled');
 			$.ajax({
 				url: 'modulos/abonos/insertar_abono.php',
 				type: 'POST',
-				data: {orden_id:orden_id,res:res,abo:abo,fec:fec},
+				data: {orden_id:orden_id,res:res,abo:abo},
 			})
 			.done(function(respuesta){
 
@@ -152,16 +121,30 @@ function detalle(orden_id){
 		data: {orden_id:orden_id},
 	})
 	.done(function(respuesta) {
-		$('select').material_select();
 		$("#detallesorden").html(respuesta);
+	})
+}
 
-
+function actualizar_detalle(detalle_id,orden){
+	var estado = $('#'+detalle_id).val();
+	//alert(estado);
+	$.ajax({
+		url: 'modulos/abonos/actualizar_detalle.php',
+		type: 'POST',
+		data: {estado:estado,detalle_id:detalle_id,orden:orden},
+	})
+	.done(function(respuesta) {
+		//console.log(respuesta);
+		if (respuesta==false) {
+			swal("No se pudo actualizar el estado");
+		}else if (respuesta==true) {
+			swal("Estado actualizado correctamente");
+		}
 	})
 	.fail(function() {
 		console.log("error");
 	})
-	.always(function() {
-		console.log("complete");
-	});
-	
+}
+function generar_pdf(id_orden){
+	window.open("modulos/orden/vista.php?orden_id="+id_orden);
 }

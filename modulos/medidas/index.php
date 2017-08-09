@@ -23,6 +23,7 @@
 		</div>
 		<div class="input-field col s2 ">
 			<select id="tipo_prenda">
+				<option>Seleccione...</option>
 				<option value="1">Vestido</option>
 				<option value="2">Blusa</option>
 				<option value="3">Pantalon</option>
@@ -64,26 +65,26 @@
 							 
 					      </div>
 					      <div class="input-field col s3">
-					          <input id="cintura" name="cintura" type="text" class="validate">
+					          <input id="cintura" name="cintura" type="text" class="validate solo-numero">
 					          <label for="cintura">Cintura</label>
 					      </div>
 					        <div class="input-field col s3">
-					          <input id="cadera" name="cadera" type="text" class="validate">
+					          <input id="cadera" name="cadera" type="text" class="validate solo-numero">
 					          <label for="cadera">Cadera</label>
 					      </div>
 					      </div>
 
 					      <div class="row">
 					      <div class="input-field col s4">
-							  <input id="largo_blusa" name="largo_blusa" type="text" class="validate">
+							  <input id="largo_blusa" name="largo_blusa" type="text" class="validate solo-numero">
 					          <label for="largo_blusa">Largo de blusa</label>
 						  </div>
 					      <div class="input-field col s4">
-					          <input id="largo_falda" name="largo_falda" type="text" class="validate">
+					          <input id="largo_falda" name="largo_falda" type="text" class="validate solo-numero">
 					          <label for="largo_falda">Largo de falda</label>
 					      </div>
 					      <div class="input-field col s4">
-					          <input id="largo_mocho" name="largo_mocho" type="text" class="validate">
+					          <input id="largo_mocho" name="largo_mocho" type="text" class="validate solo-numero">
 					          <label for="largo_mocho">Largo de short</label>
 					      </div>
 					      </div>
@@ -91,19 +92,19 @@
 					      <div class="row">	
 					       <h6 class="" style="text-align: center;">Vestido</h6>			      
 						      <div class="input-field col s3">
-						          <input id="largo_vestido" name="largo_vestido" type="text" class="validate">
+						          <input id="largo_vestido" name="largo_vestido" type="text" class="validate solo-numero">
 						          <label for="largo_vestido">Largo de vestido</label>
 						      </div>
 						      <div class="input-field col s3">
-						          	<input id="talle" name="talle" type="text" class="validate">
+						          	<input id="talle" name="talle" type="text" class="validate solo-numero">
 						          	<label for="talle">Talle</label>
 					      	</div>
 					      	<div class="input-field col s3">
-						          	<input id="espalda" name="espalda" type="text" class="validate">
+						          	<input id="espalda" name="espalda" type="text" class="validate solo-numero">
 						          	<label for="espalda">Espalda</label>
 					      	</div>
 					      	<div class="input-field col s3">
-						          	<input id="busto" name="busto" type="text" class="validate">
+						          	<input id="busto" name="busto" type="text" class="validate solo-numero">
 						          	<label for="busto">Busto</label>
 					      	</div>
 					      </div>
@@ -111,11 +112,11 @@
 					      <div class="row">	
 					       <h6 class="" style="text-align: center;">Pantalon</h6>			      
 						      <div class="input-field col s6">
-						          <input id="largo_pantalon" name="largo_pantalon" type="text" class="validate">
+						          <input id="largo_pantalon" name="largo_pantalon" type="text" class="validate solo-numero">
 						          <label for="largo_pantalon">Largo de pantalon</label>
 						      </div>
 						      <div class="input-field col s6">
-						          	<input id="ancho_muslo" name="ancho_muslo" type="text" class="validate">
+						          	<input id="ancho_muslo" name="ancho_muslo" type="text" class="validate solo-numero">
 						          	<label for="ancho_muslo">Ancho de muslo</label>
 					      	</div>
 					      </div>
@@ -123,15 +124,15 @@
 					      <div class="row">	
 					       <h6 class="" style="text-align: center;">Largo de manga</h6>			      
 						      <div class="input-field col s4">
-						          <input id="corto_l" name="corto_l" type="text" class="validate">
+						          <input id="corto_l" name="corto_l" type="text" class="validate solo-numero">
 						          <label for="corto_l">Corto</label>
 						      </div>
 						      <div class="input-field col s4">
-						          	<input id="tc_l" name="tc_l" type="text" class="validate">
+						          	<input id="tc_l" name="tc_l" type="text" class="validate solo-numero">
 						          	<label for="tc_l">3/4</label>
 					      	</div>
 					      	<div class="input-field col s4">
-						          	<input id="largo_l" name="largo_l" type="text" class="validate">
+						          	<input id="largo_l" name="largo_l" type="text" class="validate solo-numero">
 						          	<label for="largo_l">Largo</label>
 					      	</div>
 					      </div>
@@ -139,15 +140,15 @@
 					      <div class="row">	
 					       <h6 class="" style="text-align: center;">Ancho de manga</h6>			      
 						      <div class="input-field col s4">
-						          <input id="corto_a" name="corto_a" type="text" class="validate">
+						          <input id="corto_a" name="corto_a" type="text" class="validate solo-numero">
 						          <label for="corto_a">Corto</label>
 						      </div>
 						      <div class="input-field col s4">
-						          	<input id="tc_a" name="tc_a" type="text" class="validate">
+						          	<input id="tc_a" name="tc_a" type="text" class="validate solo-numero">
 						          	<label for="tc_a">3/4</label>
 					      	</div>
 					      	<div class="input-field col s4">
-						          	<input id="largo_a" name="largo_a" type="text" class="validate">
+						          	<input id="largo_a" name="largo_a" type="text" class="validate solo-numero">
 						          	<label for="largo_a">Largo</label>
 					      	</div>
 					      </div>

@@ -38,13 +38,15 @@
 					      </div>
 					      </div>
 					      <div class="row ">
-					      	<div class="input-field col s6">
+					      	<!-- <div class="input-field col s6">
 					         	<input type="text" class="datepicker" id="fecha" name="fecha">
 								<label for="" >*Fecha</label>
-					        </div><br>
-							<div class="col s1 ">
-   								<button type="submit" id="abonar" class="modal-action  waves-effect green btn-flat">Abonar</button></div>
-    						</div>
+					        </div><br> -->
+					        <center>
+								<div class="">
+	   								<button type="submit" id="abonar" class="modal-action  waves-effect green btn-flat">Abonar</button></div>
+	    						</div>
+    						</center>
 			      </form>
 		      </div>
 	    </div>

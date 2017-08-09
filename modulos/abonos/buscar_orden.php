@@ -30,6 +30,11 @@
     </thead><tbody>";
 
 			while($row=$resultado->fetch_assoc()){
+				$number=$row['total'];
+				$total = number_format($number);
+
+				$number1=$row['deuda'];
+				$deuda = number_format($number1);
 				$salida.="
 				<tr id='cuerpo'>
 					
@@ -38,15 +43,15 @@
 					<td>".$row['Estado_pago']."</td>
 					<td>".$row['fecha_inicio']."</td>
 					<td>".$row['fecha_entrega']."</td>
-					<td>".$row['total']."</td>
-					<td>".$row['deuda']."</td>
+					<td>$".$total."</td>
+					<td>$".$deuda."</td>
 					<td>
 						<a href='#abono' id='".$row['id']."' class='btn-floating btn-large waves-effect waves-light blue darken-1 tooltipped' onclick='realizar_abono(".$row['id'].",".$row['deuda'].");' data-position='left' data-delay='50' data-tooltip='Realizar abono' ><i class='material-icons'>attach_money</i>
 						</a>
 
 						<a href='#detalle' class='btn-floating btn-large waves-effect waves-light teal tooltipped' onclick='detalle(".$row['id'].");' data-position='top' data-delay='50' data-tooltip='Detalle de la orden' ><i class='material-icons'>add_to_photos</i></a>
 
-						<a class='btn-floating btn-large waves-effect waves-light grey darken-1 tooltipped' onclick='mostrar(".$row['id'].");' data-position='right' data-delay='50' data-tooltip='Generar PDF' ><i class='material-icons'>picture_as_pdf</i>
+						<a class='btn-floating btn-large waves-effect waves-light grey darken-1 tooltipped' onclick='generar_pdf(".$row['id'].");' data-position='right' data-delay='50' data-tooltip='Generar PDF' ><i class='material-icons'>picture_as_pdf</i>
 						</a>	
 					</td>
 					

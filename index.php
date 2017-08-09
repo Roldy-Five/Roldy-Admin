@@ -18,13 +18,18 @@
 			<li><a href="#!">Total por mes</a></li>
 			<!--<li class="divider"></li>-->
 			</ul>
-			
 			<ul id="dropdown2" class="dropdown-content">
 			<li><a href="#!">Ordenes por realizar</a></li>
 			<li><a href="#!">Total por mes</a></li>
 			<!--<li class="divider"></li>-->
 			</ul>
+
 			<ul id="dropdown3" class="dropdown-content">
+			<li><a href="index.php?modulo=orden&elemento=index.php">Nueva orden</a></li>
+			<li><a href="index.php?modulo=abonos&elemento=index.php">Realizar pagos</a></li>
+			<!--<li class="divider"></li>-->
+			</ul>
+			<ul id="dropdown4" class="dropdown-content">
 			<li><a href="index.php?modulo=orden&elemento=index.php">Nueva orden</a></li>
 			<li><a href="index.php?modulo=abonos&elemento=index.php">Realizar pagos</a></li>
 			<!--<li class="divider"></li>-->
@@ -43,11 +48,10 @@
 		       	<li><a class="dropdown-button" href="#!" data-activates="dropdown2"><i class="material-icons left">trending_down</i>Reportes<i class="material-icons right">arrow_drop_down</i></a></li>
 		      </ul>
 		      <ul class="side-nav" id="mobile-demo">
-		        <li><a href="index.php?modulo=cliente&elemento=index.php">Cliente</a></li>
-		        <li><a href="index.php?modulo=medidas&elemento=index.php">Medidas</a></li>
-		        <li><a href="index.php?modulo=orden&elemento=index.php">Orden</a></li>
-		        	<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Reportes<i class="material-icons right">arrow_drop_down</i></a></li>
-		      </ul>
+		        <li><a href="index.php?modulo=cliente&elemento=index.php"><i class="material-icons left large">supervisor_account</i>Cliente</a></li>
+		        <li><a href="index.php?modulo=medidas&elemento=index.php"><i class="material-icons left large">assignment</i>Medidas</a></li> 
+		        <li><a class="dropdown-button" href="#!" data-activates="dropdown4"><i class="material-icons left large">shopping_cart</i>Orden<i class="material-icons right">arrow_drop_down</i></a></li>
+		       	<li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons left">trending_down</i>Reportes<i class="material-icons right">arrow_drop_down</i></a></li>
 		    </div>
  		 </nav>
 	</header>

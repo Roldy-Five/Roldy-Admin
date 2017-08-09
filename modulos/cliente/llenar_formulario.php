@@ -26,7 +26,7 @@ include "../../conexion.php";
 				     <div class='row'>
 
 					      <div class='input-field col s4'>
-					          <input  id='identificacion1' name='identificacion' placeholder='' type='text' class='validate' value='$identificacion'>
+					          <input  id='identificacion1' name='identificacion' placeholder='' type='text' class='validate solo-numero' value='$identificacion'>
 					          <label for='identificacion'>Identificación</label>
 					      </div>
 					      <div class='input-field col s4'>
@@ -46,10 +46,12 @@ include "../../conexion.php";
 						$r= mysqli_query($conn,$s) or die('Error');
 						if(mysqli_num_rows($r)>0){
 							while($rw=mysqli_fetch_assoc($r)){
-							$modal.="echo'<option value='$rw[id]'>$rw[descripcion]</option>'";	
+								
 								if ($rw["id"]==$sexo) {
-							$modal.="ECHO '<option value='$rw[id]' selected='selected'> $rw[descripcion]</option>'";
-								}	
+									$modal.="ECHO '<option value='$rw[id]' selected='selected'> $rw[descripcion]</option>'";
+								}else{
+									$modal.="echo'<option value='$rw[id]'>$rw[descripcion]</option>'";
+								}
 
 							}	
 
@@ -67,11 +69,11 @@ include "../../conexion.php";
 
 					      <div class='row'>				      
 						      <div class='input-field col s6'>
-						          <input id='telefono_11' name='telefono_1' placeholder='' type='text' class='validate' value='$telefono_1'>
+						          <input id='telefono_11' name='telefono_1' placeholder='' type='text' class='validate solo-numero' value='$telefono_1'>
 						          <label for='last_name'>Telefono 1</label>
 						      </div>
 						      <div class='input-field col s6'>
-						          	<input id='telefono_21' name='telefono_2' placeholder='' type='text' class='validate' value='$telefono_2'>
+						          	<input id='telefono_21' name='telefono_2' placeholder='' type='text' class='validate solo-numero' value='$telefono_2'>
 						          	<label for='last_name'>Telefono 2</label>
 					      	</div>
 					      </div>

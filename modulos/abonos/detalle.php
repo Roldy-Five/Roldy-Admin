@@ -29,15 +29,17 @@
 				    	</thead>
 				    <tbody>";
 			while($row=$data->fetch_assoc()){
+				$number=$row['precio'];
+				$precio = number_format($number);
 				
-				$html .="<tr id='cuerpo'>
+				$html .="<tr>
 							<td>".$row['cliente']."</td>
 							<td>".$row['responsable']."</td>
 							<td>".$row['Tipo_prenda']."</td>
-							<td>".$row['precio']."</td>
+							<td>$".$precio."</td>
 							<td>".$row['descripcion']."</td>
 							<td>
-								<select class='estado'>";
+								<select class='estado' id='".$row['id']."'>";
 								$s="select id,descripcion from estado ";
 								$r= mysqli_query($conn,$s) or die('Error');
 								if(mysqli_num_rows($r)>0){
@@ -53,33 +55,15 @@
 								}
 							$html .= " </select></td>";
 							$html .= "<td>
-											<a class='btn-floating btn-large waves-effect waves-light amber darken-2 tooltipped' onclick='actualizar_detalle(".$row['id'].");' data-position='right' data-delay='50' data-tooltip='Actulizar estado de orden' ><i class='material-icons'>edit</i>
+											<a class='btn-floating btn-large waves-effect waves-light amber darken-2 tooltipped' onclick='actualizar_detalle(".$row['id'].",".$orden_id.");' data-position='right' data-delay='50' data-tooltip='Actulizar estado de orden' ><i class='material-icons'>edit</i>
 											</a>
 										</td></tr>";
 			}
 
 			$html .="</tbody></table>
-
-			 <script type='text/javascript'>
-				$(document).ready(function(){
-				    $('select').material_select();
-				})
-			</script>";
-
-
-
-		
-
-
-
-
-
-
+			<script type='text/javascript' src='js/accion_abonos.js'></script>";
 
 		print($html);
 	}
-
-
-
 
  ?>

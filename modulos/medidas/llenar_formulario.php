@@ -95,26 +95,26 @@ include "../../conexion.php";
 							   <label>Cliente</label>
 					      </div>
 					      <div class='input-field col s3'>
-					          <input id='cintura1' name='cintura1' type='text' class='validate' value='$cintura'>
+					          <input id='cintura1' name='cintura1' type='text' class='validate solo-numero' value='$cintura'>
 					          <label for='cintura'>Cintura</label>
 					      </div>
 					        <div class='input-field col s3'>
-					          <input id='cadera1' name='cadera1' type='text' class='validate' value='$cadera'>
+					          <input id='cadera1' name='cadera1' type='text' class='validate solo-numero' value='$cadera'>
 					          <label for='cadera'>Cadera</label>
 					      </div>
 					      </div>
 
 					       <div class='row'>
 					      <div class='input-field col s4'>
-							  <input id='largo_blusa1' name='largo_blusa1' type='text' class='validate' value='$largo_blusa'>
+							  <input id='largo_blusa1' name='largo_blusa1' type='text' class='validate solo-numero' value='$largo_blusa'>
 					          <label for='largo_blusa'>Largo de blusa</label>
 						  </div>
 					      <div class='input-field col s4'>
-					          <input id='largo_falda1' name='largo_falda1' type='text' class='validate' value='$largo_falda'>
+					          <input id='largo_falda1' name='largo_falda1' type='text' class='validate solo-numero' value='$largo_falda'>
 					          <label for='largo_falda'>Largo de falda</label>
 					      </div>
 					      <div class='input-field col s4'>
-					          <input id='largo_mocho1' name='largo_mocho1' type='text' class='validate' value='$largo_mocho'>
+					          <input id='largo_mocho1' name='largo_mocho1' type='text' class='validate solo-numero' value='$largo_mocho'>
 					          <label for=¡largo_mocho'>Largo de short</label>
 					      </div>
 					      </div>
@@ -122,19 +122,19 @@ include "../../conexion.php";
 					      <div class='row'>	
 					       <h6  style='text-align: center;''>Vestido</h6>			      
 						      <div class='input-field col s3'>
-						          <input id='largo_vestido1' name='largo_vestido1' type='text' class='validate' value='$largo_vestido'>
+						          <input id='largo_vestido1' name='largo_vestido1' type='text' class='validate solo-numero' value='$largo_vestido'>
 						          <label for='largo_vestido'>Largo de vestido</label>
 						      </div>
 						      <div class='input-field col s3'>
-						          	<input id='talle1' name='talle1' type='text' class='validate' value='$talle'>
+						          	<input id='talle1' name='talle1' type='text' class='validate solo-numero' value='$talle'>
 						          	<label for='talle'>Talle</label>
 					      	</div>
 					      	<div class='input-field col s3'>
-						          	<input id='espalda1' name='espalda1' type='text' class='validate' value='$espalda' >
+						          	<input id='espalda1' name='espalda1' type='text' class='validate solo-numero' value='$espalda' >
 						          	<label for='espalda'>Espalda</label>
 					      	</div>
 					      	<div class='input-field col s3'>
-						          	<input id='busto1' name='busto1' type='text' class='validate' value='$busto'>
+						          	<input id='busto1' name='busto1' type='text' class='validate solo-numero' value='$busto'>
 						          	<label for='busto'>Busto</label>
 					      	</div>
 					      </div>
@@ -142,11 +142,11 @@ include "../../conexion.php";
 					      <div class='row'>	
 					       <h6  style='text-align: center;'>Pantalon</h6>			      
 						      <div class='input-field col s6'>
-						          <input id='largo_pantalon1' name='largo_pantalon1' type='text' class='validate' value='$largo_pantalon'>
+						          <input id='largo_pantalon1' name='largo_pantalon1' type='text' class='validate solo-numero' value='$largo_pantalon'>
 						          <label for='largo_pantalon'>Largo de pantalon</label>
 						      </div>
 						      <div class='input-field col s6'>
-						          	<input id='ancho_muslo1' name='ancho_muslo1' type='text' class='validate' value='$ancho_muslo'>
+						          	<input id='ancho_muslo1' name='ancho_muslo1' type='text' class='validate solo-numero' value='$ancho_muslo'>
 						          	<label for='ancho_muslo'>Ancho de muslo</label>
 					      	</div>
 					      </div>
@@ -154,15 +154,15 @@ include "../../conexion.php";
 					       <div class='row'>	
 					       <h6  style='text-align: center;''>Largo de manga</h6>			      
 						      <div class='input-field col s4'>
-						          <input id='corto_l1' name='corto_l1' type='text' class='validate' value='$corto_l'>
+						          <input id='corto_l1' name='corto_l1' type='text' class='validate solo-numero' value='$corto_l'>
 						          <label for='corto_l'>Corto</label>
 						      </div>
 						      <div class='input-field col s4'>
-						          	<input id='tc_l1' name='tc_l1' type='text' class='validate' value='$tc_l'>
+						          	<input id='tc_l1' name='tc_l1' type='text' class='validate solo-numero' value='$tc_l'>
 						          	<label for='tc_l'>3/4</label>
 					      	</div>
 					      	<div class='input-field col s4'>
-						          	<input id='largo_l1' name='largo_l1' type='text' class='validate' value='$largo_l'>
+						          	<input id='largo_l1' name='largo_l1' type='text' class='validate solo-numero' value='$largo_l'>
 						          	<label for='largo_l'>Largo</label>
 					      	</div>
 					      </div>
@@ -170,15 +170,15 @@ include "../../conexion.php";
 					      <div class='row'>	
 					       <h6  style='text-align: center;''>Ancho de manga</h6>			      
 						      <div class='input-field col s4'>
-						          <input id='corto_a1' name='corto_a1' type='text' class='validate' value='$corto_a'>
+						          <input id='corto_a1' name='corto_a1' type='text' class='validate solo-numero' value='$corto_a'>
 						          <label for='corto_a'>Corto</label>
 						      </div>
 						      <div class='input-field col s4'>
-						          	<input id='tc_a1' name='tc_a1' type='text' class='validate' value='$tc_a'>
+						          	<input id='tc_a1' name='tc_a1' type='text' class='validate solo-numero' value='$tc_a'>
 						          	<label for='tc_a'>3/4</label>
 					      	</div>
 					      	<div class='input-field col s4'>
-						          	<input id='largo_a1' name='largo_a1' type='text' class='validate' value='$largo_a'>
+						          	<input id='largo_a1' name='largo_a1' type='text' class='validate solo-numero' value='$largo_a'>
 						          	<label for='largo_a'>Largo</label>
 					      	</div>
 					      </div>
@@ -190,11 +190,6 @@ include "../../conexion.php";
 					      
 					      
 			      <script type='text/javascript' src='js/accion_medidas.js'></script>
-			      <script type='text/javascript'>
-	$(document).ready(function(){
-    $('select').material_select();
-	})
-</script>
 					";
 					echo $modal;
 ?>

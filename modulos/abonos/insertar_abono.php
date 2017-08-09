@@ -16,9 +16,8 @@
 
 
 
-
 				$s="INSERT INTO abonos (orden_id,abono,fecha,responsable) VALUES 
-				('$_POST[orden_id]','$_POST[abo]','$_POST[fec]','$_POST[res]')";
+				('$_POST[orden_id]','$_POST[abo]',CURRENT_TIMESTAMP,'$_POST[res]')";
 				mysqli_query($conn,$s);
 
 				$s="UPDATE orden SET deuda='$nueva_deuda' WHERE id ='$_POST[orden_id]'";
