@@ -3,7 +3,7 @@
 	$salida = "";
 	$query= "SELECT orden.id, orden.responsable,orden.total,estado.descripcion as Estado_orden,estado_pago.descripcion as Estado_pago,orden.fecha_inicio,orden.fecha_entrega, orden.deuda FROM orden
 		INNER JOIN estado ON estado.id = orden.estado_id
-		INNER JOIN estado_pago ON estado_pago.id = orden.estado_pago_id";
+		INNER JOIN estado_pago ON estado_pago.id = orden.estado_pago_id ORDER BY orden.id desc";
 
 	if (isset($_POST['consulta'])) {
 		$q=$conn->real_escape_string($_POST['consulta']);
@@ -25,12 +25,12 @@
         <th>Fecha de entrega</th>
         <th>Total</th>
         <th>Deuda</th>
-        <th>Opciones</th>
+        <th style='width:200px;'>Opciones</th>
     </tr>
     </thead><tbody>";
 
 			while($row=$resultado->fetch_assoc()){
-		$salida.="
+				$salida.="
 				<tr id='cuerpo'>
 					
 					<td id='identifica'>".$row['responsable']."</td>
@@ -44,9 +44,10 @@
 						<a href='#abono' id='".$row['id']."' class='btn-floating btn-large waves-effect waves-light blue darken-1 tooltipped' onclick='realizar_abono(".$row['id'].",".$row['deuda'].");' data-position='left' data-delay='50' data-tooltip='Realizar abono' ><i class='material-icons'>attach_money</i>
 						</a>
 
-						<a href='#detalle' class='btn-floating btn-large waves-effect waves-light teal tooltipped' onclick='mostrar(".$row['id'].");' data-position='top' data-delay='50' data-tooltip='Detalle de la orden' ><i class='material-icons'>add_to_photos</i></a>
+						<a href='#detalle' class='btn-floating btn-large waves-effect waves-light teal tooltipped' onclick='detalle(".$row['id'].");' data-position='top' data-delay='50' data-tooltip='Detalle de la orden' ><i class='material-icons'>add_to_photos</i></a>
 
-						<a class='btn-floating btn-large waves-effect waves-light grey darken-1 tooltipped' onclick='mostrar(".$row['id'].");' data-position='right' data-delay='50' data-tooltip='Generar PDF' ><i class='material-icons'>picture_as_pdf</i></a>	
+						<a class='btn-floating btn-large waves-effect waves-light grey darken-1 tooltipped' onclick='mostrar(".$row['id'].");' data-position='right' data-delay='50' data-tooltip='Generar PDF' ><i class='material-icons'>picture_as_pdf</i>
+						</a>	
 					</td>
 					
 				</tr>";

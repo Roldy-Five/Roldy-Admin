@@ -65,7 +65,9 @@ function realizar_abono(orden_id, deuda){
 		}else if(abonos.val()==""){
 			responsable.attr("style","border-bottom: 1px solid gray");
 			abonos.attr("style","border-bottom: 1px solid red");
-		}else if(deuda<abonos.val()){
+		}else if(deuda < $("#abonos").val()){
+
+			alert(abonos.val())
 			swal("El abono no puede ser mayor a la deuda.");
 			responsable.attr("style","border-bottom: 1px solid gray");
 			abonos.attr("style","border-bottom: 1px solid red");
@@ -128,17 +130,10 @@ function realizar_abono(orden_id, deuda){
 	                  "showMethod": "fadeIn",
 	                  "hideMethod": "fadeOut"
 	                }
-	                // window.location.replace("index.php?modulo=abonos&elemento=index.php");
-	                setTimeout("document.location=document.location", 1500);
+	                //window.location.replace("index.php?modulo=abonos&elemento=index.php");
+	                setTimeout(redireccionar, 1500);
 	            }
-	})
-			.fail(function() {
-				console.log("error");
-			})
-			.always(function() {
-				console.log("complete");
-			});
-			
+	})	
 		}
 
 
@@ -146,6 +141,27 @@ function realizar_abono(orden_id, deuda){
 
 }
 
-// function redireccionar(){
+function redireccionar(){
+	window.location.replace("index.php?modulo=abonos&elemento=index.php");
+}
+
+function detalle(orden_id){
+	$.ajax({
+		url: 'modulos/abonos/detalle.php',
+		type: 'POST',
+		data: {orden_id:orden_id},
+	})
+	.done(function(respuesta) {
+		$('select').material_select();
+		$("#detallesorden").html(respuesta);
+
+
+	})
+	.fail(function() {
+		console.log("error");
+	})
+	.always(function() {
+		console.log("complete");
+	});
 	
-// }
+}

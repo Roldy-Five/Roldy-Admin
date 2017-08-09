@@ -56,7 +56,7 @@
 		
 		<div class="row">
 		<div class="input-field col s3">
-				<input type="number" id="precio" name="precio" class="limpiar">
+				<input type="text" id="precio" name="precio" class="limpiar solo-numero">
 				<label for="">Precio</label>
 			</div>
 			<div class="input-field col s5">

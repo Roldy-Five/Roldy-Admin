@@ -96,5 +96,8 @@
 	<script type="text/javascript" src="js/toastr.min.js"></script>
 	<script >
 		$(".button-collapse").sideNav();
+		$('.solo-numero').keyup(function (){
+			this.value = (this.value + '').replace(/[^0-9]/g, '');
+		});
 	</script>
 </html>

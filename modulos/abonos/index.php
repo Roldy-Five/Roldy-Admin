@@ -14,13 +14,11 @@
 			<label>Buscar</label>
 			<input type="text" name="caja_busqueda" id="caja_busqueda">
 		</div>
-		<!-- <div class="input-field col s3  offset-s4">
-			<br>
-			<a class="waves-effect waves-light btn green" href="#modal1" "> Nuevo cliente</a>	
-		</div> -->
 	</div>
 
 	<div id="datos">	<!-- en este div se cargan los datos-->	
+
+
 	</div>
 
 	<div id="abono" class="modal">
@@ -35,7 +33,7 @@
 					          <label for="responsable">* Responsable</label>
 					      </div>
 					      <div class="input-field col s6">
-					          <input id="abonos" name="abonos" type="text" class="validate">
+					          <input id="abonos" name="abonos" type="text" class="validate solo-numero">
 					          <label for="abonos">* abono</label>
 					      </div>
 					      </div>
@@ -53,9 +51,15 @@
     </div>
     <div id="detalle" class="modal">
 
-	    <div class="modal-content" id="r">
+	    <div class="modal-content z-depth-5" id="r">
 		     <h4>Detalle de la orden</h4>
-		     
+				<div id="detallesorden"></div>
+
+
+
+
+
+
 	    </div>
    	
   	</div>
