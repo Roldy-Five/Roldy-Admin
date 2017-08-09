@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+
 	// $('select').material_select();
 	$('.modal').modal();
    $('#tipo_prenda').material_select();

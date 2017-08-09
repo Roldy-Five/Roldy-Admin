@@ -3,7 +3,8 @@
 <head>
 	<title>Roldy Five - Confecciones</title>
 	<link rel="stylesheet" type="text/css" href="css/select2.css">
-	<link rel="stylesheet" type="text/css" href="css/estilos.css">	
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		
 </head>
 <body>
 <div>
@@ -65,7 +66,8 @@
          		<label for="descripcion">Descripcion</label>
 			</div>
 			<div class="input-field col s2 ">
-				<a class="btn-floating btn-large waves-effect waves-light green" id="llenar"><i class="material-icons">add</i></a>
+			<!-- <img src="../../fonts/iconos/GoogleIconos.woff2"> -->
+				<a class="btn-floating btn-large waves-effect waves-light green"  id="llenar"><i class="material-icons">add</i></a>
 			</div>
 		</div>
 		<table class='striped responsive-table centered' id="tabla">

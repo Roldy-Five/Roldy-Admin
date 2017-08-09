@@ -12,15 +12,6 @@
 <body>
 <div id="l"></div>
 	<div class="row">
-		<div class="input-field col s4">
-
-			<label>Buscar</label>
-			<input type="text" name="vestido" id="vestido" value="">
-			<input type="text" name="blusa" id="blusa" value="">
-			<input type="text" name="pantalon" id="pantalon" value="">
-			<input type="text" name="falda" id="falda" value="">
-			<input type="text" name="short" id="short" value="">
-		</div>
 		<div class="input-field col s2 ">
 			<select id="tipo_prenda">
 				<option>Seleccione...</option>
@@ -30,7 +21,15 @@
 				<option value="4">Falda</option>
 				<option value="5">Short</option>
 			</select>
-			
+		</div>
+		<div class="input-field col s4">
+
+			<label>Buscar</label>
+			<input type="text" name="vestido" id="vestido" value="">
+			<input type="text" name="blusa" id="blusa" value="">
+			<input type="text" name="pantalon" id="pantalon" value="">
+			<input type="text" name="falda" id="falda" value="">
+			<input type="text" name="short" id="short" value="">
 		</div>
 		<div class="input-field col s3 ">
 			<br>
