@@ -41,7 +41,7 @@
 					<td>".$row['total']."</td>
 					<td>".$row['deuda']."</td>
 					<td>
-						<a href='#abono' class='btn-floating btn-large waves-effect waves-light blue darken-1 tooltipped' onclick='realizar_abono(".$row['id'].");' data-position='left' data-delay='50' data-tooltip='Realizar abono' ><i class='material-icons'>attach_money</i>
+						<a href='#abono' id='".$row['id']."' class='btn-floating btn-large waves-effect waves-light blue darken-1 tooltipped' onclick='realizar_abono(".$row['id'].",".$row['deuda'].");' data-position='left' data-delay='50' data-tooltip='Realizar abono' ><i class='material-icons'>attach_money</i>
 						</a>
 
 						<a href='#detalle' class='btn-floating btn-large waves-effect waves-light teal tooltipped' onclick='mostrar(".$row['id'].");' data-position='top' data-delay='50' data-tooltip='Detalle de la orden' ><i class='material-icons'>add_to_photos</i></a>

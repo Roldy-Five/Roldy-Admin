@@ -48,7 +48,13 @@ $(document).on('keyup', '#caja_busqueda', function(){
 	}
 })
 
-function realizar_abono(orden_id){
+function realizar_abono(orden_id, deuda){
+
+	if (deuda==0){
+		$('#'+orden_id).attr('href', '#nada');
+		swal("Ya se ha cancelado la orden !!");
+	}
+
 	$('#principal form').submit(function(e){
 		e.preventDefault();
 		var responsable = $('#responsable');
@@ -59,63 +65,72 @@ function realizar_abono(orden_id){
 		}else if(abonos.val()==""){
 			responsable.attr("style","border-bottom: 1px solid gray");
 			abonos.attr("style","border-bottom: 1px solid red");
+		}else if(deuda<abonos.val()){
+			swal("El abono no puede ser mayor a la deuda.");
+			responsable.attr("style","border-bottom: 1px solid gray");
+			abonos.attr("style","border-bottom: 1px solid red");
 		}else if(fecha.val()==""){
 			responsable.attr("style","border-bottom: 1px solid gray");
 			abonos.attr("style","border-bottom: 1px solid gray");
 			fecha.attr("style","border-bottom: 1px solid red");
 		}else {
+			responsable.attr("style","border-bottom: 1px solid gray");
+			abonos.attr("style","border-bottom: 1px solid gray");
+			fecha.attr("style","border-bottom: 1px solid gray");
 			var res = $('#responsable').val();
 			var abo = $('#abonos').val();
 			var fec = $('#fecha').val();
+			$('#abonar').addClass('disabled');
 			$.ajax({
 				url: 'modulos/abonos/insertar_abono.php',
 				type: 'POST',
 				data: {orden_id:orden_id,res:res,abo:abo,fec:fec},
 			})
 			.done(function(respuesta){
-			if(respuesta==false){
-                toastr["error"]("No se pudo realizar el abono!")
-                toastr.options = {
-                  "closeButton": false,
-                  "debug": false,
-                  "newestOnTop": false,
-                  "progressBar": true,
-                  "positionClass": "toast-bottom-center",
-                  "preventDuplicates": false,
-                  "onclick": null,
-                  "showDuration": "300",
-                  "hideDuration": "1000",
-                  "timeOut": "5000",
-                  "extendedTimeOut": "1000",
-                  "showEasing": "swing",
-                  "hideEasing": "linear",
-                  "showMethod": "fadeIn",
-                  "hideMethod": "fadeOut"
-                }
-                setTimeout("document.location=document.location",1500);
-            }else{
-            	toastr["success"]("Se realizo el abono correctamente");
-                   $("#toast-container").addClass('container');
-                    // toastr["success"]("Se ha generado su orden!", "Notificaciones")
-                    toastr.options = {
-                      "closeButton": false,
-                      "debug": false,
-                      "newestOnTop": false,
-                      "progressBar": true,
-                      "positionClass": "toast-top-center",
-                      "preventDuplicates": false,
-                      "onclick": null,
-                      "showDuration": "300",
-                      "hideDuration": "1000",
-                      "timeOut": "5000",
-                      "extendedTimeOut": "1000",
-                      "showEasing": "swing",
-                      "hideEasing": "linear",
-                      "showMethod": "fadeIn",
-                      "hideMethod": "fadeOut"
-                    }
-                    setTimeout("document.location=document.location",1500);
-            }
+
+				// alert(respuesta);
+				if(respuesta=="no hubo conexion"){
+	                toastr["error"]("No se pudo realizar el abono !")
+	                toastr.options = {
+	                  "closeButton": false,
+	                  "debug": false,
+	                  "newestOnTop": false,
+	                  "progressBar": true,
+	                  "positionClass": "toast-bottom-center",
+	                  "preventDuplicates": false,
+	                  "onclick": null,
+	                  "showDuration": "300",
+	                  "hideDuration": "1000",
+	                  "timeOut": "5000",
+	                  "extendedTimeOut": "1000",
+	                  "showEasing": "swing",
+	                  "hideEasing": "linear",
+	                  "showMethod": "fadeIn",
+	                  "hideMethod": "fadeOut"
+	                }
+	                setTimeout("document.location=document.location",1500);
+	            }else{
+	            	toastr["success"]("Se ha realizado el abono !!")
+	                toastr.options = {
+	                  "closeButton": false,
+	                  "debug": false,
+	                  "newestOnTop": false,
+	                  "progressBar": true,
+	                  "positionClass": "toast-bottom-center",
+	                  "preventDuplicates": false,
+	                  "onclick": null,
+	                  "showDuration": "300",
+	                  "hideDuration": "1000",
+	                  "timeOut": "5000",
+	                  "extendedTimeOut": "1000",
+	                  "showEasing": "swing",
+	                  "hideEasing": "linear",
+	                  "showMethod": "fadeIn",
+	                  "hideMethod": "fadeOut"
+	                }
+	                // window.location.replace("index.php?modulo=abonos&elemento=index.php");
+	                setTimeout("document.location=document.location", 1500);
+	            }
 	})
 			.fail(function() {
 				console.log("error");
@@ -130,3 +145,7 @@ function realizar_abono(orden_id){
 	})
 
 }
+
+// function redireccionar(){
+	
+// }

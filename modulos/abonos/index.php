@@ -45,7 +45,7 @@
 								<label for="" >*Fecha</label>
 					        </div><br>
 							<div class="col s1 ">
-   								<button type="submit" class="modal-action  waves-effect green btn-flat">Abonar</button></div>
+   								<button type="submit" id="abonar" class="modal-action  waves-effect green btn-flat">Abonar</button></div>
     						</div>
 			      </form>
 		      </div>

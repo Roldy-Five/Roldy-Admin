@@ -12,32 +12,31 @@
 			$deuda=$rw[deuda];
 			$total=$rw[total];
 		}
-		$nueva_deuda=$deuda-$abono;
+		$nueva_deuda = $deuda - $abono;
 
-		if ($nueva_deuda<0) {
-			print(0);
-		}
-		else{
-			$s="INSERT INTO abonos (orden_id,abono,fecha,responsable) VALUES 
-			('$_POST[orden_id]','$_POST[abo]','$_POST[fec]','$_POST[res]')";
-			mysqli_query($conn,$s);
+
+
+
+				$s="INSERT INTO abonos (orden_id,abono,fecha,responsable) VALUES 
+				('$_POST[orden_id]','$_POST[abo]','$_POST[fec]','$_POST[res]')";
+				mysqli_query($conn,$s);
 
 				$s="UPDATE orden SET deuda='$nueva_deuda' WHERE id ='$_POST[orden_id]'";
 				mysqli_query($conn,$s);
 			if($nueva_deuda==0){
 				$s="UPDATE orden SET estado_pago_id='2' WHERE id ='$_POST[orden_id]'";
 				mysqli_query($conn,$s);
+				// print("pagado");
 			}else{
 				$s="UPDATE orden SET estado_pago_id='1' WHERE id ='$_POST[orden_id]'";
 				mysqli_query($conn,$s);
+
 			}
-		}
 		
-		if(mysqli_error($conn)){
-				print(0);
-			}
-			else{
-				print(1);
+			if(mysqli_error($conn)){
+				print("no hubo conexion");
+			}else{
+				print("si hubo conexion");
 			}
 		}
  ?>
