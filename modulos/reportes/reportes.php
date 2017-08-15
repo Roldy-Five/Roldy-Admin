@@ -1,16 +1,10 @@
 <?php 
 sleep(2);
 
-// if (isset($_['mes'])) {
+if (isset($_POST['mes'])) {
 	require_once ("../../conexion.php");
 	$mes = $_POST['mes'];
-
-	
-
-
-
-
-$totalMes = '$ 1.000.000';
+	$totalMes = '$ 1.000.000';
 	print('<div class="col s6 m6 animated slideInUp">
 			<h2 class="header"></h2>
 		<div class="card horizontal hoveraved">
@@ -18,7 +12,7 @@ $totalMes = '$ 1.000.000';
 		  </div>
 		  <div class="card-stacked">
 		    <div class="card-content">
-		      <p>En el mes de <span id="mes" align="justify"><b>'.$mes.'</b></span> se han recibido hasta el momento <b>'.$totalMes.'</b> de pesos corespondientes a los trabajos realizados.</p>
+		      <p>En el mes de <span id="mes" align="justify"><b>'.$mes.'</b></span> se han recibido <b>'.$totalMes.'</b> de pesos corespondientes a los trabajos realizados.</p>
 		    </div>
 		    <div class="card-action">
 		      <a href="#">Reporte mensual</a>
@@ -41,6 +35,8 @@ $totalMes = '$ 1.000.000';
 		  </div>
 		</div>
 	</div>');
-// }
+}else{
+	print("No hay consulta para realizar...");
+}
 
  ?>

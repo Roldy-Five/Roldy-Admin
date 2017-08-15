@@ -18,7 +18,7 @@ $(document).ready(function() {
 			dataType: 'HTML',
 			data: {mes: mes},
 			beforeSend:function(){
-				$('#resultado').html('<div class="progress"><div class="indeterminate"></div></div>');
+				$('#resultado').html('<div class="progress"><div class="indeterminate"></div></div>Estamos cargando su reporte..');
 			}
 		})
 		.done(function(data) {
