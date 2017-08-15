@@ -6,7 +6,14 @@
 		$total=$_POST["total"];
 		$fecha_entrega=$_POST["fecha_entrega"];
 		$orden_id="";
-		$query="INSERT INTO `orden` (`id`, `responsable`, `total`, `estado_id`, `estado_pago_id`, `fecha_inicio`, `fecha_entrega`,`deuda`) VALUES (NULL, '$responsable', '$total', '2', '1', CURRENT_TIMESTAMP, '$fecha_entrega','$total')";
+		///Establecer la fecha
+
+		date_default_timezone_set('UTC');
+
+
+		$hoy = date("Y-m-d H:i:s");
+
+		$query="INSERT INTO `orden` (`id`, `responsable`, `total`, `estado_id`, `estado_pago_id`, `fecha_inicio`, `fecha_entrega`,`deuda`) VALUES (NULL, '$responsable', '$total', '2', '1', '$hoy', '$fecha_entrega','$total')";
 		mysqli_query($conn,$query);
 
 		if(mysqli_error($conn)){

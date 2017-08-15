@@ -1,7 +1,8 @@
 $(document).ready(function(){
-
+    $('.modal').modal();
     $('.cmb').material_select();
     $('#cliente').select2();
+    $('#desc_rec').material_select();
     $('.datepicker').pickadate({
     // The title label to use for the month nav buttons
         labelMonthNext: 'Mes siguiente',
@@ -66,12 +67,31 @@ $('#llenar').click(function(){
         $("#precio").attr("style","border-bottom: 1px solid gray")
         $("#fecha_entrega").attr("style","border-bottom: 1px solid gray")
         $("#responsable").attr("style","border-bottom: 1px solid gray")
+         var precio_final =0;
+        // $("#desc_rec").change(function(event) {
+
+          if ($("#valor").val()==""){
+            precio_final = precio;
+          }else{
+            if(parseInt($("#desc_rec").val())==1){
+              precio_final = parseInt(precio) + parseInt($("#valor").val());
+            }else {
+              precio_final = parseInt(precio) - parseInt($("#valor").val());
+              // alert($("#desc_rec").val());
+
+            }
+          }
+
+        // });
+
+        console.log(precio_final)
+        
         client.push(cliente_id);
         tipo_prend.push(tipo_prenda_id);
-        preci.push(precio);
+        preci.push(precio_final);
         decripcio.push(descripcion);
         cont++;
-        var fila='<tr id-mayor="'+cont+'"><td class="este">'+cont+'</td><td><div class="col s2"><a id="'+cont+'"  class="red btn" onclick="remover(this.id)" > <i class="material-icons red tiny">remove</i></a></div></td><td>'+cliente+'</td><td>'+tipo_prenda+'</td><td>Por realizar</td><td>'+descripcion+'</td><td class="precio">$'+numberFormat(precio)+'</td></tr>';
+        var fila='<tr id-mayor="'+cont+'"><td class="este">'+cont+'</td><td><div class="col s2"><a id="'+cont+'"  class="red btn" onclick="remover(this.id)" > <i class="material-icons red tiny">remove</i></a></div></td><td>'+cliente+'</td><td>'+tipo_prenda+'</td><td>Por realizar</td><td>'+descripcion+'</td><td class="precio">$'+precio_final+'</td></tr>';
         $("#body").append(fila);
            reordenar();
           $('#envio').html('<br><div class="col s4 offset-s5" id="n"><button class="modal-action modal-close waves-effect green btn-flat" onclick="insertar();">Realizar orden</button></div>');
@@ -88,10 +108,8 @@ $('#llenar').click(function(){
     function remover(fila_id){
         $("tr[id-mayor="+fila_id+"]").remove();
          reordenar();
-         if(orden.length < 1) {
+         if(orden.length < 1){
             orden.length=0;
-
-
          }else {
             //Se eliminan los elementos del array según la posición determinada
            orden[0].splice(fila_id-1,1);

@@ -119,14 +119,15 @@ $(document).on('keyup', '#caja_busqueda', function(){
 			          "showMethod": "fadeIn",
 			          "hideMethod": "fadeOut"
 			        }
-		        setTimeout("document.location=document.location",1500);
+		       setTimeout(redireccionar, 1500);
 		    }
 		});	
 		}
 
-
-
 })
+	function redireccionar(){
+	window.location.replace("index.php?modulo=cliente&elemento=index.php");
+}
 
 
 function mostrar(id){

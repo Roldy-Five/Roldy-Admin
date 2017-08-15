@@ -8,6 +8,33 @@
 </head>
 <body>
 <div>
+	<!-- Modal para los descuentos o recargos -->
+<div id="descuentos_recargos" class="modal">
+	    <div class="modal-content">
+		     <h4>Descuentos o sobrecargos</h4>
+		     <div class="row" id="principal">
+				     <div class="row">
+					      <div class="input-field col s6">
+					         <select id="desc_rec">
+					         	<option value="1">Recargos</option>
+					         	<option value="2">Descuentos</option>
+					         </select>
+					      </div>
+					      <div class="input-field col s6">
+					          <input id="valor" name="valor" type="text" class="validate solo-numero limpiar">
+					          <label for="valor">* Valor</label>
+					      </div>
+					      </div>
+					      <div class="row ">
+					        <center>
+								<div class="">
+	   								<button  class="modal-action modal-close  waves-effect green btn-flat">Aceptar</button></div>
+	    						</div>
+    						</center>
+		      </div>
+	    </div>
+    </div>
+
 	<form>
 		<div class="row">
 		<h5 class="" style="text-align: center;">Datos generales de la orden</h5>
@@ -60,13 +87,15 @@
 				<input type="text" id="precio" name="precio" class="limpiar solo-numero">
 				<label for="">Precio</label>
 			</div>
+			<div class="input-field col s1 ">
+				<a href="#descuentos_recargos" class="btn-floating btn-large waves-effect waves-light blue darken-1"><i class="material-icons">attach_money</i></a>
+			</div>
 			<div class="input-field col s5">
 				<!--<textarea id="descripcion" class="materialize-textarea"></textarea>-->
 				<input type="text" id="descripcion" name="descripcion" class="limpiar">
          		<label for="descripcion">Descripcion</label>
 			</div>
-			<div class="input-field col s2 ">
-			<!-- <img src="../../fonts/iconos/GoogleIconos.woff2"> -->
+			<div class="input-field col s1 ">
 				<a class="btn-floating btn-large waves-effect waves-light green"  id="llenar"><i class="material-icons">add</i></a>
 			</div>
 		</div>
@@ -80,7 +109,6 @@
 			        <th>Estado de prenda</th>
 			        <th>Descripción</th>
 			        <th>Precio</th>
-			        
 			        
 			    </tr>
 		    </thead>

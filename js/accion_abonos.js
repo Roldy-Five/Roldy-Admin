@@ -133,8 +133,9 @@ function actualizar_detalle(detalle_id,orden){
 		type: 'POST',
 		data: {estado:estado,detalle_id:detalle_id,orden:orden},
 	})
-	.done(function(respuesta) {
-		//console.log(respuesta);
+	.done(function(respuesta){
+		buscar_datos();
+		console.log(respuesta);
 		if (respuesta==false) {
 			swal("No se pudo actualizar el estado");
 		}else if (respuesta==true) {
