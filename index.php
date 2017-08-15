@@ -7,6 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
 <link rel="stylesheet" type="text/css" href="css/iconos.css">		
 	<link rel="stylesheet" type="text/css" href="css/toastr.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	
 	<script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="node_modules/sweetalert/dist/sweetalert.css">
 </head>
@@ -15,12 +17,12 @@
 	<header>
 		<ul id="dropdown1" class="dropdown-content">
 			<li><a href="#!">Ordenes por realizar</a></li>
-			<li><a href="#!">Total por mes</a></li>
+			<li><a href="index.php?modulo=reportes&elemento=index.php">Total por mes</a></li>
 			<!--<li class="divider"></li>-->
 			</ul>
 			<ul id="dropdown2" class="dropdown-content">
 			<li><a href="#!">Ordenes por realizar</a></li>
-			<li><a href="#!">Total por mes</a></li>
+			<li><a href="index.php?modulo=reportes&elemento=index.php">Total por mes</a></li>
 			<!--<li class="divider"></li>-->
 			</ul>
 

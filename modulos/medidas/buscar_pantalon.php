@@ -11,16 +11,16 @@
 	}
 		$resultado = $conn->query($query);
 		if ($resultado->num_rows > 0) {
-			$salida.="<h5 class=''><p>Medidas para pantalon</p></h5><table class='striped responsive-table centered'>
+			$salida.="<h5 class=''><p>Medidas para pantalon</p></h5><table class='striped responsive-table centered animated slideInUp'>
 		<thead>  
-    <tr>
-        <th>Nombre Completo</th>
-        <th>Cadera</th>
-        <th>Cintura</th>
-        <th>largo</th>
-        <th>Ancho de muslo</th>
-    	<th>Opciones</th>
-    </tr>
+		    <tr>
+		        <th>Nombre Completo</th>
+		        <th>Cadera</th>
+		        <th>Cintura</th>
+		        <th>largo</th>
+		        <th>Ancho de muslo</th>
+		    	<th>Opciones</th>
+		    </tr>
     </thead><tbody>";
 
 			while($row=$resultado->fetch_assoc()){

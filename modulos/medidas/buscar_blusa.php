@@ -20,7 +20,7 @@
 		$resultado = $conn->query($query);
 		if ($resultado->num_rows > 0) {
 
-			$salida.="<h5><p>Medidas para blusa</p></h5><table class='striped responsive-table centered'>
+			$salida.="<h5><p>Medidas para blusa</p></h5><table class='striped responsive-table centered animated slideInUp'>
 		<thead>  
     <tr>
         <th>Nombre Completo</th>
