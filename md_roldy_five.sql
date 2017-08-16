@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-08-2017 a las 02:30:09
+-- Tiempo de generación: 16-08-2017 a las 03:47:17
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.23
 
@@ -19,6 +19,40 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `md_roldy_five`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `abonos`
+--
+
+CREATE TABLE `abonos` (
+  `id` int(11) NOT NULL,
+  `orden_id` int(11) NOT NULL,
+  `abono` double NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `responsable` varchar(40) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `abonos`
+--
+
+INSERT INTO `abonos` (`id`, `orden_id`, `abono`, `fecha`, `responsable`) VALUES
+(63, 6, 400, '2017-08-09 15:12:35', 'asfsdfsd'),
+(64, 6, 600, '2017-08-09 15:13:07', 'dfsd'),
+(65, 6, 2000, '2017-08-09 15:13:58', 'dddd'),
+(66, 6, 2000, '2017-08-09 15:13:58', 'dddd'),
+(67, 6, 456, '2017-08-09 15:14:44', 'sdfsd'),
+(68, 5, 5655, '2017-08-09 15:15:08', 'sadfasd'),
+(69, 8, 1000, '2017-08-09 17:41:40', 'Davo'),
+(70, 8, 1000, '2017-08-09 17:42:04', 'Davod'),
+(71, 5, 16000, '2017-08-09 19:18:09', 'ddd'),
+(72, 6, 544, '2017-08-09 19:18:30', '23423'),
+(73, 6, 0, '2017-08-09 19:18:57', '23423'),
+(74, 10, 39265005, '2017-08-13 00:42:37', 'Luis Raga'),
+(75, 10, 39265005, '2017-08-13 00:42:37', 'Luis Raga'),
+(76, 12, 360, '2017-08-16 01:37:46', 'Luis Raga');
 
 -- --------------------------------------------------------
 
@@ -40,7 +74,8 @@ CREATE TABLE `ancho_manga` (
 
 INSERT INTO `ancho_manga` (`id`, `vestido_id`, `corto`, `3_4`, `largo`) VALUES
 (1, 1, '8', '7', '4'),
-(2, 8, '122', '123', '23');
+(2, 8, '122', '123', '23'),
+(4, 10, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -66,7 +101,7 @@ CREATE TABLE `cliente` (
 INSERT INTO `cliente` (`id`, `identificacion`, `nombre`, `apellidos`, `sexo_id`, `direccion`, `telefono_1`, `telefono_2`) VALUES
 (208, '26260656', 'Rosa ', 'Renteria Palacios', 2, 'B/ Margaritas', '3127068685', '6719133'),
 (231, '1077467487', 'Yovanny', 'Raga Renteria', 1, 'B/ Margaritas', '3056427832', '3215648974'),
-(233, '322545', 'jkghkjh', 'ghkkjh', 1, 'iojh', 'kjhl', 'kjh');
+(234, '6666', 'asdfas', 'dszdf', 1, 'zfgzfdz', '7657', '768');
 
 -- --------------------------------------------------------
 
@@ -104,7 +139,7 @@ CREATE TABLE `estado_pago` (
 
 INSERT INTO `estado_pago` (`id`, `descripcion`) VALUES
 (1, 'En deuda'),
-(2, 'Cancelado');
+(2, 'Pagado');
 
 -- --------------------------------------------------------
 
@@ -126,7 +161,8 @@ CREATE TABLE `largo_manga` (
 
 INSERT INTO `largo_manga` (`id`, `vestido_id`, `corto`, `3_4`, `largo`) VALUES
 (1, 1, '10', '5', '6'),
-(8, 8, '12', '12', '12');
+(8, 8, '12', '12', '12'),
+(10, 10, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -150,7 +186,8 @@ CREATE TABLE `medidas` (
 
 INSERT INTO `medidas` (`id`, `cliente_id`, `cintura`, `cadera`, `largo_mocho`, `largo_falda`, `largo_blusa`) VALUES
 (1, 208, '20', '40', '30', '10', '15'),
-(64, 231, '1200', '12', '12', '12', '12');
+(64, 231, '120', '12', '12', '30', '12'),
+(66, 234, '34', '45', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -164,9 +201,25 @@ CREATE TABLE `orden` (
   `total` double NOT NULL,
   `estado_id` int(11) NOT NULL,
   `estado_pago_id` int(11) NOT NULL,
-  `fecha_inicio` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `fecha_entrega` varchar(20) COLLATE utf8_bin NOT NULL
+  `fecha_inicio` varchar(120) COLLATE utf8_bin NOT NULL,
+  `fecha_entrega` varchar(20) COLLATE utf8_bin NOT NULL,
+  `deuda` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='se guaradan las ordenes realizadas';
+
+--
+-- Volcado de datos para la tabla `orden`
+--
+
+INSERT INTO `orden` (`id`, `responsable`, `total`, `estado_id`, `estado_pago_id`, `fecha_inicio`, `fecha_entrega`, `deuda`) VALUES
+(5, 'dddd', 23453, 3, 1, '2017-08-11 04:48:31', '23 Agosto, 2017', 608),
+(6, '23423', 3453453, 3, 1, '2017-08-11 04:48:19', '22 Agosto, 2017', 3449000),
+(8, 'Davo', 56132322, 2, 1, '2017-08-11 10:19:03', '25 Agosto, 2017', 56130322),
+(9, 'rrrrr', 45549898, 2, 1, '2017-08-13 13:34:21', '23 Agosto, 2017', 45549898),
+(10, 'luis fernando raga', 39265005, 2, 2, '2017-08-12 20:08:18', '29 Agosto, 2017', 0),
+(11, 'Luis Fernando Raga', 39566, 2, 1, '2017-08-13 11:11:25', '9 Agosto, 2017', 39566),
+(12, 'Luis Raga', 360, 3, 2, '2017-08-13 13:32:31', '13 Agosto, 2017', 0),
+(13, 'Luis', 100000, 2, 1, '2017-08-13 18:43:28', '13 Agosto, 2017', 100000),
+(14, 'raga', 10000, 2, 1, '2017-08-13 18:56:18', '23 Agosto, 2017', 10000);
 
 -- --------------------------------------------------------
 
@@ -183,6 +236,31 @@ CREATE TABLE `orden_cliente` (
   `estado_id` int(11) NOT NULL,
   `descripcion` varchar(100) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='se guarad el detalle de cada orden';
+
+--
+-- Volcado de datos para la tabla `orden_cliente`
+--
+
+INSERT INTO `orden_cliente` (`id`, `cliente_id`, `orden_id`, `tipo_prenda_id`, `precio`, `estado_id`, `descripcion`) VALUES
+(11, 208, 5, 1, 23453, 3, 'sdfas'),
+(12, 208, 6, 1, 3453453, 3, 'asdasda'),
+(15, 208, 8, 2, 55566666, 2, 'gggggg'),
+(16, 231, 8, 4, 565656, 3, 'ffggggg'),
+(17, 208, 9, 1, 4000, 3, 'ffffffff'),
+(18, 231, 9, 1, 45545454, 2, 'fffffffff'),
+(19, 208, 9, 1, 444, 3, 'gggg'),
+(20, 208, 10, 1, 4563456, 3, 'sdfsdfs'),
+(21, 208, 10, 1, 34634563, 2, 'asdvasd'),
+(22, 208, 10, 1, 32452, 3, 'asdfas'),
+(23, 208, 10, 1, 34534, 3, 'asdfasd'),
+(24, 208, 11, 2, 5000, 2, 'manga cor, jsnjk'),
+(25, 208, 11, 3, 34566, 3, 'Ninguna'),
+(26, 208, 12, 1, 100, 3, 'egsdfg'),
+(27, 208, 12, 1, 120, 3, 'ninguna'),
+(28, 208, 12, 1, 140, 3, 'Ninuna'),
+(29, 208, 13, 1, 100000, 2, 'ningun'),
+(30, 208, 14, 1, 6000, 3, 'nada'),
+(31, 208, 14, 1, 4000, 2, 'asfas');
 
 -- --------------------------------------------------------
 
@@ -203,7 +281,8 @@ CREATE TABLE `pantalon` (
 
 INSERT INTO `pantalon` (`id`, `medidas_id`, `largo`, `ancho_muslo`) VALUES
 (1, 1, '50', '30'),
-(5, 64, '12', '12');
+(5, 64, '12', '12'),
+(7, 66, '', '');
 
 -- --------------------------------------------------------
 
@@ -267,11 +346,19 @@ CREATE TABLE `vestido` (
 
 INSERT INTO `vestido` (`id`, `medidas_id`, `largo`, `talle`, `espalda`, `busto`) VALUES
 (1, 1, '30', '50', '25', '10'),
-(8, 64, '12', '12', '12', '12');
+(8, 64, '12', '12', '12', '12'),
+(10, 66, '', '', '', '');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `abonos`
+--
+ALTER TABLE `abonos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `orden_id` (`orden_id`);
 
 --
 -- Indices de la tabla `ancho_manga`
@@ -368,15 +455,20 @@ ALTER TABLE `vestido`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `abonos`
+--
+ALTER TABLE `abonos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+--
 -- AUTO_INCREMENT de la tabla `ancho_manga`
 --
 ALTER TABLE `ancho_manga`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=235;
 --
 -- AUTO_INCREMENT de la tabla `estado`
 --
@@ -391,27 +483,27 @@ ALTER TABLE `estado_pago`
 -- AUTO_INCREMENT de la tabla `largo_manga`
 --
 ALTER TABLE `largo_manga`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT de la tabla `medidas`
 --
 ALTER TABLE `medidas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 --
 -- AUTO_INCREMENT de la tabla `orden`
 --
 ALTER TABLE `orden`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT de la tabla `orden_cliente`
 --
 ALTER TABLE `orden_cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT de la tabla `pantalon`
 --
 ALTER TABLE `pantalon`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `sexo`
 --
@@ -426,10 +518,16 @@ ALTER TABLE `tipo_prenda`
 -- AUTO_INCREMENT de la tabla `vestido`
 --
 ALTER TABLE `vestido`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `abonos`
+--
+ALTER TABLE `abonos`
+  ADD CONSTRAINT `abonos_ibfk_1` FOREIGN KEY (`orden_id`) REFERENCES `orden` (`id`);
 
 --
 -- Filtros para la tabla `ancho_manga`
