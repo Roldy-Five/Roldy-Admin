@@ -14,32 +14,25 @@
 
 
 <h3 class="text-center">Reportes del mes</h3>
-<div class="row">
-	<div class="input-field col s6 m6">
-		<select class="icons" id="meses">
-		  <option value="" disabled selected>Elije un mes</option>
-		  <option value="Enero" data-icon="" class="circle">Enero</option>
-		  <option value="Febrero" data-icon="" class="circle">Febrero</option>
-		  <option value="Marzo" data-icon="" class="circle">Marzo</option>
-		  <option value="Abril" data-icon="" class="circle">Abril</option>
-		  <option value="Mayo" data-icon="" class="circle">Mayo</option>
-		  <option value="Junio" data-icon="" class="circle">Junio</option>
-		  <option value="Julio" data-icon="" class="circle">Julio</option>
-		  <option value="Agosto" data-icon="" class="circle">Agosto</option>
-		  <option value="Septiembre" data-icon="" class="circle">Septiembre</option>
-		  <option value="Octubre" data-icon="" class="circle">Octubre</option>
-		  <option value="Noviembre" data-icon="" class="circle">Noviembre</option>
-		  <option value="Diciembre" data-icon="" class="circle">Diciembre</option>
-		</select>
-	</div>
-</div>
 
-
+ <div class="row">
+ 	<div class="col s3">
+ 		<label for="" >Fecha de inicio</label>
+ 		<input type="text" class="datepicker" id="inicio" name="inicio">
+ 	</div>
+ 	<div class="col s3">
+ 		<label for="" >Fecha final</label>
+ 		<input type="text" class="datepicker" id="final" name="final">
+ 	</div><br><br>
+ 	<div class="col s3">
+ 		<button class="btn green" id="ver">Ver</button>
+ 	</div>
+ </div>
+<center>
 <div class="row" id="resultado">
 
 
-
-</div>
+</div></center>
 	 <script src="js/jquery-3.2.1.min.js"></script>
 	 <script type="text/javascript" src="js/select2.js"></script>
 	 <script type="text/javascript" src="js/materialize.min.js"></script>

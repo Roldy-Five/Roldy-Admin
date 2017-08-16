@@ -1,18 +1,29 @@
 <?php 
-sleep(2);
 
-if (isset($_POST['mes'])) {
+
+if (isset($_POST['inicio']) & isset($_POST['final'])) {
+	$inicio = $_POST['inicio'];
+	$final = $_POST['final'];
+	$totalMes = "";
 	require_once ("../../conexion.php");
-	$mes = $_POST['mes'];
-	$totalMes = '$ 1.000.000';
-	print('<div class="col s6 m6 animated slideInUp">
+	$query = "SELECT sum(abono) as total FROM abonos WHERE fecha_reporte >= '$inicio' AND fecha_reporte < '$final'";
+	$resultado = $conn->query($query);
+	while($row=$resultado->fetch_assoc()){
+		if ($row['total'] == "") {
+			$totalMes= "0";
+		}else{
+			$totalMes = $row['total'];
+		}
+	}
+
+	print('<div class=" m6 animated slideInUp">
 			<h2 class="header"></h2>
 		<div class="card horizontal hoveraved">
 		  <div class="card-image">
 		  </div>
 		  <div class="card-stacked">
 		    <div class="card-content">
-		      <p>En el mes de <span id="mes" align="justify"><b>'.$mes.'</b></span> se han recibido <b>'.$totalMes.'</b> de pesos corespondientes a los trabajos realizados.</p>
+		      <p>Entre el <span id="mes" align="justify"><b>'.$inicio.'</b></span> y el  <span align="justify"><b>'.$final.'</b></span> se han recibido <b>$'.number_format($totalMes).'</b> corespondientes a los trabajos realizados.</p>
 		    </div>
 		    <div class="card-action">
 		      <a href="#">Reporte mensual</a>
@@ -20,21 +31,7 @@ if (isset($_POST['mes'])) {
 		  </div>
 		</div>
 	</div>');
-	print('<div class="col s6 m6 animated slideInUp">
-			<h2 class="header"></h2>
-		<div class="card horizontal hoveraved">
-		  <div class="card-image">
-		  </div>
-		  <div class="card-stacked">
-		    <div class="card-content">
-		      <p>Se realizaron <b>4</b> pantalones, <b>4</b> blusas y <b>13</b> shores a <b>7</b> clientes.</p>
-		    </div>
-		    <div class="card-action">
-		      <a href="#">Reporte mensual</a>
-		    </div>
-		  </div>
-		</div>
-	</div>');
+	
 }else{
 	print("No hay consulta para realizar...");
 }

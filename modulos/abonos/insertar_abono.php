@@ -1,5 +1,17 @@
 <?php 
+
 	if(isset($_POST['orden_id'])){
+		function formatearFecha(){
+		$meses = ['Diciembre','Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio',
+		'Agosto','Septiembre','Octubre','Noviembre'];
+		date_default_timezone_set('America/Bogota');
+		$mes = date('n');
+		$dia = date('j');
+		$ano = date('Y');
+		$resultadoFecha = $dia .' '. $meses[$mes] .', '.$ano;
+		return $resultadoFecha;
+		}
+		$fecha = formatearFecha();
 		$deuda ="";
 		$total ="";
 		$abono=$_POST['abo'];
@@ -16,8 +28,8 @@
 
 
 
-				$s="INSERT INTO abonos (orden_id,abono,fecha,responsable) VALUES 
-				('$_POST[orden_id]','$_POST[abo]',CURRENT_TIMESTAMP,'$_POST[res]')";
+				$s="INSERT INTO abonos (orden_id,abono,fecha,responsable,fecha_reporte) VALUES 
+				('$_POST[orden_id]','$_POST[abo]',CURRENT_TIMESTAMP,'$_POST[res]','$fecha')";
 				mysqli_query($conn,$s);
 
 				$s="UPDATE orden SET deuda='$nueva_deuda' WHERE id ='$_POST[orden_id]'";
