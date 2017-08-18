@@ -67,6 +67,7 @@
 			</div>
 			<div class="input-field col s6">
 			 	<select id="tipo_prenda"  name="tipo_prenda" class="cmb">
+			 		<option>Seleccione...</option>
 					<?php
 						include ('conexion.php');
 						$s="SELECT id,descripcion  FROM tipo_prenda order by id";
@@ -84,8 +85,8 @@
 		
 		<div class="row">
 		<div class="input-field col s3">
-				<input type="text" id="precio" name="precio" class="limpiar solo-numero">
-				<label for="">Precio</label>
+				<input disabled="" value=" " type="text" id="precio" name="precio" class="disabled">
+				<label for="disabled">Precio</label>
 			</div>
 			<div class="input-field col s1 ">
 				<a href="#descuentos_recargos" class="btn-floating btn-large waves-effect waves-light blue darken-1"><i class="material-icons">attach_money</i></a>

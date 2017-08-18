@@ -2,6 +2,30 @@ $(document).ready(function(){
 	buscar_datos();
 	$('select').material_select();
 	$('.modal').modal();
+	$('.datepicker').pickadate({
+    // The title label to use for the month nav buttons
+        labelMonthNext: 'Mes siguiente',
+        labelMonthPrev: 'Mes anterior',
+
+// The title label to use for the dropdown selectors
+        labelMonthSelect: 'Selecciona un mes',
+        labelYearSelect: 'Selecciona un año',
+
+// Months and weekdays
+        monthsFull: [ 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre' ],
+        monthsShort: [ 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic' ],
+        weekdaysFull: [ 'Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado' ],
+        weekdaysShort: [ 'Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab' ],
+
+// Materialize modified
+        weekdaysLetter: [ 'D', 'L', 'M', 'X', 'J', 'V', 'S' ],
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year,
+    today: 'Hoy',
+    clear: 'Limpiar',
+    close: 'Cerrar',
+    closeOnSelect: false // Close upon selecting a date,
+  });
 })
 function buscar_datos(consulta){
 	$.ajax({
@@ -61,46 +85,11 @@ function realizar_abono(orden_id, deuda){
 
 				// alert(respuesta);
 				if(respuesta=="no hubo conexion"){
-	                toastr["error"]("No se pudo realizar el abono !")
-	                toastr.options = {
-	                  "closeButton": false,
-	                  "debug": false,
-	                  "newestOnTop": false,
-	                  "progressBar": true,
-	                  "positionClass": "toast-bottom-center",
-	                  "preventDuplicates": false,
-	                  "onclick": null,
-	                  "showDuration": "300",
-	                  "hideDuration": "1000",
-	                  "timeOut": "5000",
-	                  "extendedTimeOut": "1000",
-	                  "showEasing": "swing",
-	                  "hideEasing": "linear",
-	                  "showMethod": "fadeIn",
-	                  "hideMethod": "fadeOut"
-	                }
-	                setTimeout("document.location=document.location",1500);
+	                swal("No se pudo realizar el abono");
+					setTimeout(redireccionar, 2500);
 	            }else{
-	            	toastr["success"]("Se ha realizado el abono !!")
-	                toastr.options = {
-	                  "closeButton": false,
-	                  "debug": false,
-	                  "newestOnTop": false,
-	                  "progressBar": true,
-	                  "positionClass": "toast-bottom-center",
-	                  "preventDuplicates": false,
-	                  "onclick": null,
-	                  "showDuration": "300",
-	                  "hideDuration": "1000",
-	                  "timeOut": "5000",
-	                  "extendedTimeOut": "1000",
-	                  "showEasing": "swing",
-	                  "hideEasing": "linear",
-	                  "showMethod": "fadeIn",
-	                  "hideMethod": "fadeOut"
-	                }
-	                //window.location.replace("index.php?modulo=abonos&elemento=index.php");
-	                setTimeout(redireccionar, 1500);
+	            	swal("Se ha realizado el abono");
+					setTimeout(redireccionar, 2500);
 	            }
 	})	
 		}
@@ -135,7 +124,7 @@ function actualizar_detalle(detalle_id,orden){
 	})
 	.done(function(respuesta){
 		buscar_datos();
-		console.log(respuesta);
+		//console.log(respuesta);
 		if (respuesta==false) {
 			swal("No se pudo actualizar el estado");
 		}else if (respuesta==true) {
@@ -148,4 +137,36 @@ function actualizar_detalle(detalle_id,orden){
 }
 function generar_pdf(id_orden){
 	window.open("modulos/orden/vista.php?orden_id="+id_orden);
+}
+
+function actualizar_fecha(id_orden){
+	$("#fecha").click(function(event) {
+		event.preventDefault();
+		var fecha = $("#fecha_entrega").val();
+
+		if (fecha == "") {
+			$("#fecha_entrega").attr('style', 'border-bottom: 1px solid red');
+		}else{
+			$("#fecha_entrega").attr('style', 'border-bottom: 1px solid gray');
+			//$("#fecha_entrega").val("");
+			$.ajax({
+				url: 'modulos/abonos/editar_fecha.php',
+				type: 'POST',
+				data: {id_orden:id_orden,fecha:fecha},
+			})
+			.done(function(respuesta) {
+				if (respuesta==false) {
+					swal("No se pudo actualizar la fecha");
+					setTimeout(redireccionar, 2500);
+				}else{
+					swal("Fecha actualizado correctamente");
+					setTimeout(redireccionar, 2500);
+				}
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			
+		}
+	});
 }

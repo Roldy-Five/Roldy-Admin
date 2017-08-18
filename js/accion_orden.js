@@ -34,7 +34,18 @@ var client = [];
 var tipo_prend = [];
 var preci = [];
 var decripcio = [];
-// items.pop()
+
+$("#tipo_prenda").change(function(event) {
+  var id = $(this).val();
+  $.ajax({
+    url: 'modulos/orden/llenar_precio.php',
+    type: 'POST',
+    data: {id: id},
+  })
+  .done(function(respuesta) {
+      $("#precio").val(respuesta);
+  })
+});
 
 $('#llenar').click(function(){
     var cliente_id = document.getElementById("cliente").value

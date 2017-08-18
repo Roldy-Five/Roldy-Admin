@@ -25,7 +25,7 @@
         <th>Fecha de entrega</th>
         <th>Total</th>
         <th>Deuda</th>
-        <th style='width:200px;'>Opciones</th>
+        <th style='width:250px;'>Opciones</th>
     </tr>
     </thead><tbody>";
 
@@ -46,6 +46,9 @@
 					<td>$".$total."</td>
 					<td>$".$deuda."</td>
 					<td>
+						<a href='#fecha_modal' class='btn-floating btn-large waves-effect waves-light brown lighten-2 tooltipped' onclick='actualizar_fecha(".$row['id'].");' data-position='left' data-delay='50' data-tooltip='Realizar abono' ><i class='material-icons'>device_hub</i>
+						</a>
+
 						<a href='#abono' id='".$row['id']."' class='btn-floating btn-large waves-effect waves-light blue darken-1 tooltipped' onclick='realizar_abono(".$row['id'].",".$row['deuda'].");' data-position='left' data-delay='50' data-tooltip='Realizar abono' ><i class='material-icons'>attach_money</i>
 						</a>
 

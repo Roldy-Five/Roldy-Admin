@@ -15,7 +15,7 @@
 	
 		$resultado = $conn->query($query);
 		if ($resultado->num_rows > 0) {
-			$salida.="<table class='striped responsive-table centered' border='1'>
+			$salida.="<table class='striped responsive-table centered' >
 		<thead>  
     <tr>
         <th>Identificación</th>

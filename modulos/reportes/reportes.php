@@ -6,7 +6,7 @@ if (isset($_POST['inicio']) & isset($_POST['final'])) {
 	$final = $_POST['final'];
 	$totalMes = "";
 	require_once ("../../conexion.php");
-	$query = "SELECT sum(abono) as total FROM abonos WHERE fecha_reporte >= '$inicio' AND fecha_reporte < '$final'";
+	$query = "SELECT sum(abono) as total FROM abonos WHERE fecha_reporte >= '$inicio' AND fecha_reporte <= '$final'";
 	$resultado = $conn->query($query);
 	while($row=$resultado->fetch_assoc()){
 		if ($row['total'] == "") {
