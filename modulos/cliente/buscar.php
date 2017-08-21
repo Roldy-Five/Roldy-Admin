@@ -1,9 +1,6 @@
 <?php
 
-	if (!isset($_SESSION["usuario"])) {
-		
-	}else{
-
+	
     include ('../../conexion.php');
 	$salida = "";
 	$query= "SELECT cliente.id, cliente.identificacion, cliente.nombre,  cliente.apellidos, sexo.descripcion, cliente.direccion, CONCAT(cliente.telefono_1,' - ',cliente.telefono_2) as telefono  from cliente 
@@ -21,17 +18,17 @@
 		$resultado = $conn->query($query);
 		if ($resultado->num_rows > 0) {
 			$salida.="<table class='striped responsive-table centered' >
-		<thead>  
-    <tr>
-        <th>Identificación</th>
-        <th>Nombres</th>
-        <th>Apellidos</th>
-        <th>Sexo</th>
-        <th>Dirección</th>
-        <th>Teléfono</th>
-    	<th >Opciones</th>
-    </tr>
-    </thead><tbody>";
+						<thead>  
+						    <tr>
+						        <th>Identificación</th>
+						        <th>Nombres</th>
+						        <th>Apellidos</th>
+						        <th>Sexo</th>
+						        <th>Dirección</th>
+						        <th>Teléfono</th>
+						    	<th >Opciones</th>
+						    </tr>
+				   		</thead><tbody>";
 
 			while($row=$resultado->fetch_assoc()){
 		$salida.="
@@ -58,5 +55,5 @@
 		}
 	echo $salida;
 
-}
+
 ?>

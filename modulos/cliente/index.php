@@ -1,12 +1,4 @@
-<?php 
 
-	if (!isset($_SESSION["usuario"])) {
-		
-	}else{
-
-
-
- ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,7 +65,7 @@
 										$r= mysqli_query($conn,$s) or die("Error");
 										if(mysqli_num_rows($r)>0){
 											while($rw=mysqli_fetch_assoc($r)){
-										echo"<option value='$rw[id]'>$rw[descripcion]</option>";					
+											echo"<option value='$rw[id]'>$rw[descripcion]</option>";					
 											}					
 										}
 									?>
@@ -122,7 +114,3 @@
 	<script type="text/javascript" src="js/accion_cliente.js"></script>
 </body>
 </html>
-
-<?php 
-}
- ?>
