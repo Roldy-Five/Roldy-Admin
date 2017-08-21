@@ -1,10 +1,8 @@
 <?php 
 	session_start();
-	if(isset($_SESSION["usuario"])){
-		// header("Location:./index.php?Error=Acceso");
+	if(!isset($_SESSION["usuario"])){
+		header("Location:./index.php");
 	}else{
-		header("Location:./index.php?Error=Acceso denegado");
-	}
  ?>
 <!DOCTYPE html>
 <html>
@@ -119,3 +117,10 @@
 		});
 	</script>
 </html>
+
+
+<?php 
+
+}
+
+ ?>

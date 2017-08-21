@@ -1,3 +1,9 @@
+<?php 
+	session_start();
+	if (isset($_SESSION["usuario"])){
+		header("Location:index2.php");
+	}else{
+ ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,7 +19,7 @@
 		    <div class="row">
 		        <div class="input-field col s12 m12">
 		          <i class="material-icons prefix">person</i>
-		          <input id="usuario" type="text" class="validate">
+		          <input id="usuario" type="text" class="validate" autofocus>
 		          <label for="usuario">Usuario</label>
 		        </div>
 		    </div>
@@ -31,16 +37,14 @@
 	        </div>
 	    </form>
 	</div>
-	<a href=""><p class="center-align">Terminos y condiciones.</p></a>
-
-
-	
+	<a href=""><p class="center-align">Terminos y condiciones.</p></a>	
 </body>
 <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="js/materialize.js"></script>
 <script type="text/javascript" src="js/accion_inicio.js"></script>
-
-
-
-
 </html>
+<?php 
+
+}
+
+ ?>

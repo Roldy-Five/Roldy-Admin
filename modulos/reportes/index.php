@@ -1,3 +1,10 @@
+<?php 
+
+	if (!isset($_SESSION["usuario"])) {
+		
+	}else{
+ ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -39,3 +46,9 @@
 	 <script type="text/javascript" src="js/accion_reportes.js"></script>
 </body>
 </html>
+
+<?php 
+
+
+}
+ ?>

@@ -33,6 +33,7 @@ $(document).ready(function() {
 			})
 			.fail(function(data) {
 				//Se ejecutará si haya algún error de conexión
+				console.log(data)
 			})			
 		}
 	});

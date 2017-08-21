@@ -1,4 +1,9 @@
 <?php
+
+	if (!isset($_SESSION["usuario"])) {
+		
+	}else{
+
     include ('../../conexion.php');
 	$salida = "";
 	$query= "SELECT cliente.id, cliente.identificacion, cliente.nombre,  cliente.apellidos, sexo.descripcion, cliente.direccion, CONCAT(cliente.telefono_1,' - ',cliente.telefono_2) as telefono  from cliente 
@@ -52,5 +57,6 @@
 			$salida.="<p class='pink-text lighten-5'>No se encontraron datos....</p>";
 		}
 	echo $salida;
-?>
 
+}
+?>

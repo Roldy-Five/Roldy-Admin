@@ -1,4 +1,12 @@
+<?php 
 
+	if (!isset($_SESSION["usuario"])) {
+		
+	}else{
+
+
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -114,3 +122,7 @@
 	<script type="text/javascript" src="js/accion_cliente.js"></script>
 </body>
 </html>
+
+<?php 
+}
+ ?>

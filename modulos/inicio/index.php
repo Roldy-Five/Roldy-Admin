@@ -1,3 +1,12 @@
+<?php 
+session_start();
+	if (!isset($_SESSION["usuario"])) {
+		
+	}else{
+
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -46,3 +55,8 @@
 
 
 </html>
+
+<?php 
+
+}
+ ?>
