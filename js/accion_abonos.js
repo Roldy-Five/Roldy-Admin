@@ -100,7 +100,7 @@ function realizar_abono(orden_id, deuda){
 }
 
 function redireccionar(){
-	window.location.replace("index.php?modulo=abonos&elemento=index.php");
+	window.location.replace("index2.php?modulo=abonos&elemento=index.php");
 }
 
 function detalle(orden_id){

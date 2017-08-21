@@ -126,7 +126,7 @@ $(document).on('keyup', '#caja_busqueda', function(){
 
 })
 	function redireccionar(){
-	window.location.replace("index.php?modulo=cliente&elemento=index.php");
+	window.location.replace("index2.php?modulo=cliente&elemento=index.php");
 }
 
 
