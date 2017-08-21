@@ -50,7 +50,7 @@
 
 		<div class="row">
 			<h5 class="" style="text-align: center;">Detalle de la orden</h5>
-			<div class="input-field col s6"><br>
+			<div class="input-field col s6 "><br>
 				<select id="cliente" style="width: 100%; left: -20px;" name="cliente" >
 				<!--	<option>Seleccione un cliente</option>-->
 					<?php

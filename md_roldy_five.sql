@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-08-2017 a las 03:47:17
+-- Tiempo de generación: 21-08-2017 a las 23:35:53
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.23
 
@@ -31,28 +31,21 @@ CREATE TABLE `abonos` (
   `orden_id` int(11) NOT NULL,
   `abono` double NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `responsable` varchar(40) COLLATE utf8_bin NOT NULL
+  `responsable` varchar(40) COLLATE utf8_bin NOT NULL,
+  `fecha_reporte` varchar(40) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `abonos`
 --
 
-INSERT INTO `abonos` (`id`, `orden_id`, `abono`, `fecha`, `responsable`) VALUES
-(63, 6, 400, '2017-08-09 15:12:35', 'asfsdfsd'),
-(64, 6, 600, '2017-08-09 15:13:07', 'dfsd'),
-(65, 6, 2000, '2017-08-09 15:13:58', 'dddd'),
-(66, 6, 2000, '2017-08-09 15:13:58', 'dddd'),
-(67, 6, 456, '2017-08-09 15:14:44', 'sdfsd'),
-(68, 5, 5655, '2017-08-09 15:15:08', 'sadfasd'),
-(69, 8, 1000, '2017-08-09 17:41:40', 'Davo'),
-(70, 8, 1000, '2017-08-09 17:42:04', 'Davod'),
-(71, 5, 16000, '2017-08-09 19:18:09', 'ddd'),
-(72, 6, 544, '2017-08-09 19:18:30', '23423'),
-(73, 6, 0, '2017-08-09 19:18:57', '23423'),
-(74, 10, 39265005, '2017-08-13 00:42:37', 'Luis Raga'),
-(75, 10, 39265005, '2017-08-13 00:42:37', 'Luis Raga'),
-(76, 12, 360, '2017-08-16 01:37:46', 'Luis Raga');
+INSERT INTO `abonos` (`id`, `orden_id`, `abono`, `fecha`, `responsable`, `fecha_reporte`) VALUES
+(80, 14, 92, '2017-08-16 02:55:23', 'raga', '15 Agosto, 2017'),
+(81, 13, 50000, '2017-08-16 03:13:07', 'Luis', '15 Agosto, 2017'),
+(82, 14, 9900, '2017-08-16 03:51:36', 'raga', '15 Agosto, 2017'),
+(83, 13, 10000, '2017-08-18 16:08:44', 'Luis', '18 Agosto, 2017'),
+(84, 13, 10000, '2017-08-18 16:09:00', 'Luis', '18 Agosto, 2017'),
+(85, 15, 500, '2017-08-18 16:49:09', 'david', '18 Agosto, 2017');
 
 -- --------------------------------------------------------
 
@@ -167,6 +160,26 @@ INSERT INTO `largo_manga` (`id`, `vestido_id`, `corto`, `3_4`, `largo`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `login`
+--
+
+CREATE TABLE `login` (
+  `id` int(11) NOT NULL,
+  `cliente_id` int(11) NOT NULL,
+  `usuario` varchar(30) COLLATE utf8_bin NOT NULL,
+  `clave` varchar(30) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Volcado de datos para la tabla `login`
+--
+
+INSERT INTO `login` (`id`, `cliente_id`, `usuario`, `clave`) VALUES
+(1, 208, 'admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `medidas`
 --
 
@@ -211,15 +224,16 @@ CREATE TABLE `orden` (
 --
 
 INSERT INTO `orden` (`id`, `responsable`, `total`, `estado_id`, `estado_pago_id`, `fecha_inicio`, `fecha_entrega`, `deuda`) VALUES
-(5, 'dddd', 23453, 3, 1, '2017-08-11 04:48:31', '23 Agosto, 2017', 608),
+(5, 'dddd', 23453, 3, 1, '2017-08-11 04:48:31', '23 Agosto, 2017', 600),
 (6, '23423', 3453453, 3, 1, '2017-08-11 04:48:19', '22 Agosto, 2017', 3449000),
 (8, 'Davo', 56132322, 2, 1, '2017-08-11 10:19:03', '25 Agosto, 2017', 56130322),
 (9, 'rrrrr', 45549898, 2, 1, '2017-08-13 13:34:21', '23 Agosto, 2017', 45549898),
 (10, 'luis fernando raga', 39265005, 2, 2, '2017-08-12 20:08:18', '29 Agosto, 2017', 0),
 (11, 'Luis Fernando Raga', 39566, 2, 1, '2017-08-13 11:11:25', '9 Agosto, 2017', 39566),
 (12, 'Luis Raga', 360, 3, 2, '2017-08-13 13:32:31', '13 Agosto, 2017', 0),
-(13, 'Luis', 100000, 2, 1, '2017-08-13 18:43:28', '13 Agosto, 2017', 100000),
-(14, 'raga', 10000, 2, 1, '2017-08-13 18:56:18', '23 Agosto, 2017', 10000);
+(13, 'Luis', 100000, 2, 1, '2017-08-13 18:43:28', '5 Agosto, 2017', 30000),
+(14, 'raga', 10000, 2, 2, '2017-08-13 18:56:18', '30 Agosto, 2017', 0),
+(15, 'david', 50500, 2, 1, '2017-08-18 16:48:23', '26 Agosto, 2017', 50000);
 
 -- --------------------------------------------------------
 
@@ -260,7 +274,9 @@ INSERT INTO `orden_cliente` (`id`, `cliente_id`, `orden_id`, `tipo_prenda_id`, `
 (28, 208, 12, 1, 140, 3, 'Ninuna'),
 (29, 208, 13, 1, 100000, 2, 'ningun'),
 (30, 208, 14, 1, 6000, 3, 'nada'),
-(31, 208, 14, 1, 4000, 2, 'asfas');
+(31, 208, 14, 1, 4000, 2, 'asfas'),
+(32, 208, 15, 1, 30000, 2, 'algo'),
+(33, 231, 15, 4, 20500, 3, 'Alguito');
 
 -- --------------------------------------------------------
 
@@ -311,19 +327,20 @@ INSERT INTO `sexo` (`id`, `descripcion`) VALUES
 
 CREATE TABLE `tipo_prenda` (
   `id` int(11) NOT NULL,
-  `descripcion` varchar(20) COLLATE utf8_bin NOT NULL
+  `descripcion` varchar(20) COLLATE utf8_bin NOT NULL,
+  `precio` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `tipo_prenda`
 --
 
-INSERT INTO `tipo_prenda` (`id`, `descripcion`) VALUES
-(1, 'Vestido'),
-(2, 'Blusa'),
-(3, 'Pantalon'),
-(4, 'Short'),
-(5, 'Falda');
+INSERT INTO `tipo_prenda` (`id`, `descripcion`, `precio`) VALUES
+(1, 'Vestido', 30000),
+(2, 'Blusa', 25000),
+(3, 'Pantalon', 20000),
+(4, 'Short', 18000),
+(5, 'Falda', 15000);
 
 -- --------------------------------------------------------
 
@@ -397,6 +414,14 @@ ALTER TABLE `largo_manga`
   ADD KEY `vestido_id` (`vestido_id`);
 
 --
+-- Indices de la tabla `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `usuario` (`usuario`),
+  ADD KEY `cliente_id` (`cliente_id`);
+
+--
 -- Indices de la tabla `medidas`
 --
 ALTER TABLE `medidas`
@@ -458,7 +483,7 @@ ALTER TABLE `vestido`
 -- AUTO_INCREMENT de la tabla `abonos`
 --
 ALTER TABLE `abonos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 --
 -- AUTO_INCREMENT de la tabla `ancho_manga`
 --
@@ -485,6 +510,11 @@ ALTER TABLE `estado_pago`
 ALTER TABLE `largo_manga`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
+-- AUTO_INCREMENT de la tabla `login`
+--
+ALTER TABLE `login`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT de la tabla `medidas`
 --
 ALTER TABLE `medidas`
@@ -493,12 +523,12 @@ ALTER TABLE `medidas`
 -- AUTO_INCREMENT de la tabla `orden`
 --
 ALTER TABLE `orden`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT de la tabla `orden_cliente`
 --
 ALTER TABLE `orden_cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT de la tabla `pantalon`
 --
@@ -546,6 +576,12 @@ ALTER TABLE `cliente`
 --
 ALTER TABLE `largo_manga`
   ADD CONSTRAINT `largo_manga_ibfk_1` FOREIGN KEY (`vestido_id`) REFERENCES `vestido` (`id`) ON DELETE CASCADE;
+
+--
+-- Filtros para la tabla `login`
+--
+ALTER TABLE `login`
+  ADD CONSTRAINT `login_ibfk_1` FOREIGN KEY (`cliente_id`) REFERENCES `cliente` (`id`);
 
 --
 -- Filtros para la tabla `medidas`
