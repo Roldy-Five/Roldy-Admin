@@ -19,7 +19,7 @@
 		    </div>
 			<div class="row">
 		        <div class="input-field col s12 m12">
-		          <i class="material-icons prefix"><i class="material-icons">visibility_off</i></i>
+		          <i class="material-icons prefix"><i class="material-icons">vpn_key</i></i>
 		          <input id="contrasena" type="password" class="validate">
 		          <label for="contrasena">Contraseña</label>
 		        </div>
