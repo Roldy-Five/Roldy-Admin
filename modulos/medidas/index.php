@@ -1,3 +1,8 @@
+<?php 
+	if(!isset($_SESSION["usuario"])){
+		header("Location:../.././index.php");
+	}else{
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -188,3 +193,6 @@
 	
 </body>
 </html>
+<?php 
+	}
+ ?>

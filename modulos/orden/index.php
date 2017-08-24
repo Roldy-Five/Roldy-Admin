@@ -1,5 +1,8 @@
-
-
+<?php 
+	if(!isset($_SESSION["usuario"])){
+		header("Location:../.././index.php");
+	}else{
+ ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -138,4 +141,6 @@
 	 <script type="text/javascript" src="js/accion_orden.js"></script>
 </body>
 </html>
-
+<?php 
+	}
+ ?>

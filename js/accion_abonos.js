@@ -90,6 +90,7 @@ function realizar_abono(orden_id, deuda){
 	            }else{
 	            	swal("Se ha realizado el abono");
 					setTimeout(redireccionar, 2500);
+					window.open("modulos/reportes/vista_abono.php?abono_id="+id_abono);
 	            }
 	})	
 		}

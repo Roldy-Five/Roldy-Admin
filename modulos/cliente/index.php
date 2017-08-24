@@ -1,4 +1,8 @@
-
+<?php 
+	if(!isset($_SESSION["usuario"])){
+		header("Location:../.././index.php");
+	}else{
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -114,3 +118,6 @@
 	<script type="text/javascript" src="js/accion_cliente.js"></script>
 </body>
 </html>
+<?php 
+	}
+ ?>

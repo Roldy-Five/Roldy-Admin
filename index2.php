@@ -22,12 +22,12 @@
 
 	<header id="header">
 		<ul id="dropdown1" class="dropdown-content">
-			<li><a href="#!">Ordenes por realizar</a></li>
+			<li><a href="index2.php?modulo=reportes&elemento=ver_abonos.php">Ver abonos</a></li>
 			<li><a href="index2.php?modulo=reportes&elemento=index.php">Total por mes</a></li>
 			<!--<li class="divider"></li>-->
 			</ul>
 			<ul id="dropdown2" class="dropdown-content">
-			<li><a href="#!">Ordenes por realizar</a></li>
+			<li><a href="index2.php?modulo=reportes&elemento=ver_abonos.php">Ver abonos</a></li>
 			<li><a href="index2.php?modulo=reportes&elemento=index.php">Total por mes</a></li>
 			<!--<li class="divider"></li>-->
 			</ul>
@@ -38,7 +38,7 @@
 			<!--<li class="divider"></li>-->
 			</ul>
 			<ul id="dropdown4" class="dropdown-content">
-			<li><a href="index2.php?modulo=orden&elemento=index.php">Nueva orden</a></li>
+			<li><a href="index2.php?modulo=orden&elemento=index.php" >Nueva orden</a></li>
 			<li><a href="index2.php?modulo=abonos&elemento=index.php">Realizar pagos</a></li>
 			<!--<li class="divider"></li>-->
 			</ul>
@@ -47,7 +47,7 @@
 		    <div class="nav-wrapper teal darken-2">
 
 		    
-		      <span><i class="material-icons left large">person</i>David Raga Renteria</span>
+		      <span><i class="material-icons left large">person</i>Rosa Renteria Palacios</span>
 		      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 		      <ul class="right hide-on-med-and-down">
 		        <li><a href="index2.php?modulo=cliente&elemento=index.php"><i class="material-icons left large">supervisor_account</i>Cliente</a></li>

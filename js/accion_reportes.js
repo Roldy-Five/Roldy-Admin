@@ -1,5 +1,6 @@
 $('select').material_select();
 $(document).ready(function() {
+	buscar_abonos();
 	$('.datepicker').pickadate({
     // The title label to use for the month nav buttons
         labelMonthNext: 'Mes siguiente',
@@ -52,3 +53,30 @@ $(document).ready(function() {
 		}	
 	});
 });
+
+function buscar_abonos(consulta){
+	$.ajax({
+		url:'modulos/reportes/buscar_abonos.php',
+		type: 'POST',
+		data: {consulta: consulta},
+	})
+	.done(function(respuesta){
+		$('#datos').html(respuesta);
+	})
+	.fail(function(){
+		console.log("error");
+	})
+}
+
+$(document).on('keyup', '#caja_busqueda', function(){
+	var valor = $(this).val();
+	if (valor != "") {
+		buscar_abonos(valor);
+	}else{
+		buscar_abonos();
+	}
+})
+
+function generar_pdf(id_abono){
+	window.open("modulos/reportes/vista_abono.php?abono_id="+id_abono);
+}
