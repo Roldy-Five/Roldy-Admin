@@ -10,7 +10,7 @@
 	<meta name="viewport" content="width=device-width,user-escalabel=no,initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
-	<!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+
 </head>
 <body>
 	<div class="row">
@@ -25,20 +25,9 @@
 		</div>
 	</div>
 
-	<div id="datos">
+	<div id="datos" style="height: 500px; overflow-y: auto;">
 		<!-- en este div se cargan los datos-->	
 	</div>
-	<!-- <div>
-		<ul class="pagination">
-	    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-	    <li class="active"><a href="#!">1</a></li>
-	    <li class="waves-effect"><a href="#!">2</a></li>
-	    <li class="waves-effect"><a href="#!">3</a></li>
-	    <li class="waves-effect"><a href="#!">4</a></li>
-	    <li class="waves-effect"><a href="#!">5</a></li>
-	    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-	    </ul>	
-	</div> -->
 
 	<div id="modal1" class="modal">
 	    <div class="modal-content">
@@ -101,8 +90,6 @@
 	    </div>
     </div>
 <div id="llanar_form"></div>
-
-
     <div id="modal2" class="modal">
 
 	    <div class="modal-content" id="r">

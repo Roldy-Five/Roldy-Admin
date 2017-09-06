@@ -21,7 +21,7 @@
 		</div>
 	</div>
 
-	<div id="datos">
+	<div id="datos" style="height: 500px; overflow-y: auto;">
 		<!-- en este div se cargan los datos-->
 	</div>
 

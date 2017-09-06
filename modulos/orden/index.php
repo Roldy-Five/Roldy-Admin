@@ -110,7 +110,7 @@
 			    <tr>
 			    	<th>Nº</th>
 			    	<th>Remover</th>
-			        <th>Nombre</th>
+			        <th>Cliente</th>
 			        <th>Tipo de prenda</th>
 			        <th>Estado de prenda</th>
 			        <th>Descripción</th>

@@ -15,16 +15,13 @@
 <body>
 	<div class="row">
 		<div class="input-field col s4">
-
 			<label>Buscar</label>
 			<input type="text" name="caja_busqueda" id="caja_busqueda">
 		</div>
 	</div>
-
-	<div id="datos">
+	<div id="datos" style="height: 500px; overflow-y: auto;" >
 		<!-- en este div se cargan los datos-->	
-	</div>
-
+	</div>		
    <!-- Este modal es para los abonos -->
 	<div id="abono" class="modal">
 	    <div class="modal-content">

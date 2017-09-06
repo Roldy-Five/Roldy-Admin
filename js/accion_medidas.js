@@ -4,6 +4,7 @@ $(document).ready(function(){
 	// $('select').material_select();
 	$('.modal').modal();
    $('#tipo_prenda').material_select();
+   $('#cliente1').material_select();
 //para recibir solo numeros en las cajas
 	$('.solo-numero').keyup(function (){
 		this.value = (this.value + '').replace(/[^0-9]/g, '');

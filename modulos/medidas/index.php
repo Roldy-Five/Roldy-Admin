@@ -42,7 +42,7 @@
 		</div>
 	</div>
 
-	<div id="datos">	
+	<div id="datos" style="height: 500px; overflow-y: auto;">	
 	</div>
 
 	<div id="modal1" class="modal ">

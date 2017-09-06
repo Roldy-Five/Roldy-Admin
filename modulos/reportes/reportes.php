@@ -1,7 +1,7 @@
 <?php 
 
 
-if (isset($_POST['inicio']) & isset($_POST['final'])) {
+if (isset($_POST['inicio']) && isset($_POST['final'])) {
 	$inicio = $_POST['inicio'];
 	$final = $_POST['final'];
 	$totalMes = "";

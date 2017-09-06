@@ -1,4 +1,5 @@
 <?php 
+ob_start();//para solucionar el problema con el redireccionamieto 
 	session_start();
 	if(!isset($_SESSION["usuario"])){
 		header("Location:./index.php");
@@ -17,6 +18,25 @@
 	
 	<script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="node_modules/sweetalert/dist/sweetalert.css">
+	<style type="text/css">
+		::-webkit-scrollbar-track
+		{
+			-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+			background-color: #F5F5F5;
+		}
+
+		::-webkit-scrollbar
+		{
+			width: 10px;
+			background-color: #F5F5F5;
+		}
+
+		::-webkit-scrollbar-thumb
+		{
+			background-color: #00897b;
+			/*border: 2px solid #555555;*/
+		}
+	</style>
 </head>
 <body>
 
@@ -66,7 +86,6 @@
  		 </nav>
 	</header>
 	<main>
-		
 	<div class="container" style="margin-bottom:2%;" id="prin">
 		<?php
 			$mod = @$_GET['modulo'];
@@ -106,6 +125,7 @@
 
 	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
 	<script src="js/materialize.min.js"></script>
+	<script src="js/materialize-pagination.js"></script>
 	<script type="text/javascript" src="js/toastr.min.js"></script>
 	<script >
 	// document.getElementById("header").style.display="none";
@@ -122,5 +142,5 @@
 <?php 
 
 }
-
+	ob_end_flush();//para solucionar el problema con el redireccionamieto
  ?>

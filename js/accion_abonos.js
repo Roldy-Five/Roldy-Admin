@@ -53,7 +53,7 @@ function realizar_abono(orden_id, deuda){
 
 	if (deuda==0){
 		$('#'+orden_id).attr('href', '#nada');
-		swal("Ya se ha cancelado la orden !!");
+		swal("Ya se ha pagado la orden !!");
 	}
 
 	$('#principal form').submit(function(e){
