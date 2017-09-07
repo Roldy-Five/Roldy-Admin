@@ -51,7 +51,6 @@ ob_start();//para solucionar el problema con el redireccionamieto
 			<li><a href="index2.php?modulo=reportes&elemento=index.php">Total por mes</a></li>
 			<!--<li class="divider"></li>-->
 			</ul>
-
 			<ul id="dropdown3" class="dropdown-content">
 			<li><a href="index2.php?modulo=orden&elemento=index.php">Nueva orden</a></li>
 			<li><a href="index2.php?modulo=abonos&elemento=index.php">Realizar pagos</a></li>
@@ -63,25 +62,53 @@ ob_start();//para solucionar el problema con el redireccionamieto
 			<!--<li class="divider"></li>-->
 			</ul>
 
+			<ul id="conf" class="dropdown-content">
+			<li><a href="index2.php?modulo=inicio&elemento=index.php"><i class="material-icons left large">person</i>Editar perfil</a></li>
+			<li><a href="index2.php?modulo=inicio&elemento=cerrar_sesion.php"><i class="material-icons left large">power_settings_new</i>Cerrar sesion</a></li>
+			<!--<li class="divider"></li>-->
+			</ul>
+
+			<ul id="conf1" class="dropdown-content">
+			<li><a href="index2.php?modulo=inicio&elemento=index.php"><i class="material-icons left large">person</i>Editar perfil</a></li>
+			<li><a href="index2.php?modulo=inicio&elemento=cerrar_sesion.php"><i class="material-icons left large">power_settings_new</i>Cerrar sesion</a></li>
+			<!--<li class="divider"></li>-->
+			</ul>
+
+
+			<ul id="basic" class="dropdown-content">
+			<li><a href="index2.php?modulo=basicos&elemento=index.php">Tipo de prenda</a></li>
+			</ul>
+
+			<ul id="basic1" class="dropdown-content">
+			<li><a href="index2.php?modulo=basicos&elemento=index.php">Tipo de prenda</a></li>
+			</ul>
+
+
+
 		<nav>
 		    <div class="nav-wrapper teal darken-2">
 
 		    
 		      <span><i class="material-icons left large">person</i>Rosa Renteria Palacios</span>
 		      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+		      <!-- menu para pc -->
 		      <ul class="right hide-on-med-and-down">
+		      	 <li><a class="dropdown-button" href="#!" data-activates="basic"><i class="material-icons left">web_asset</i>Básicos<i class="material-icons right">arrow_drop_down</i></a></li>
 		        <li><a href="index2.php?modulo=cliente&elemento=index.php"><i class="material-icons left large">supervisor_account</i>Cliente</a></li>
 		        <li><a href="index2.php?modulo=medidas&elemento=index.php"><i class="material-icons left large">assignment</i>Medidas</a></li> 
 		        <li><a class="dropdown-button" href="#!" data-activates="dropdown3"><i class="material-icons left large">shopping_cart</i>Orden<i class="material-icons right">arrow_drop_down</i></a></li>
 		       	<li><a class="dropdown-button" href="#!" data-activates="dropdown2"><i class="material-icons left">trending_down</i>Reportes<i class="material-icons right">arrow_drop_down</i></a></li>
-		       	<li><a href="index2.php?modulo=inicio&elemento=cerrar_sesion.php"><i class="material-icons left large">power_settings_new</i>Cerrar sesion</a></li>
+		       	<li><a class="dropdown-button" href="#!" data-activates="conf"><i class="material-icons left">settings</i>Configuración<i class="material-icons right">arrow_drop_down</i></a></li>
 		      </ul>
+
+		      <!-- menu para movil -->
 		      <ul class="side-nav" id="mobile-demo">
+		      	<li><a class="dropdown-button" href="#!" data-activates="basic1"><i class="material-icons left">web_asset</i>Básicos<i class="material-icons right">arrow_drop_down</i></a></li>
 		        <li><a href="index2.php?modulo=cliente&elemento=index.php"><i class="material-icons left large">supervisor_account</i>Cliente</a></li>
 		        <li><a href="index2.php?modulo=medidas&elemento=index.php"><i class="material-icons left large">assignment</i>Medidas</a></li> 
 		        <li><a class="dropdown-button" href="#!" data-activates="dropdown4"><i class="material-icons left large">shopping_cart</i>Orden<i class="material-icons right">arrow_drop_down</i></a></li>
 		       	<li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons left">trending_down</i>Reportes<i class="material-icons right">arrow_drop_down</i></a></li>
-		       	<li><a href="index2.php?modulo=inicio&elemento=cerrar_sesion.php"><i class="material-icons left large">power_settings_new</i>Cerrar sesion</a></li>
+		       	<li><a class="dropdown-button" href="#!" data-activates="conf1"><i class="material-icons left">settings</i>Configuración<i class="material-icons right">arrow_drop_down</i></a></li>
 		    </div>
  		 </nav>
 	</header>
@@ -125,7 +152,6 @@ ob_start();//para solucionar el problema con el redireccionamieto
 
 	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
 	<script src="js/materialize.min.js"></script>
-	<script src="js/materialize-pagination.js"></script>
 	<script type="text/javascript" src="js/toastr.min.js"></script>
 	<script >
 	// document.getElementById("header").style.display="none";
