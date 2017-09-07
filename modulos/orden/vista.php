@@ -1,4 +1,10 @@
 <?php 
+
+
+session_start();
+if(!isset($_SESSION["usuario"])){
+    header("Location:../.././index.php");
+  }else{
 ///////Libreria https://mpdf.github.io/reference/mpdf-functions/output.html
   require_once ('../../mpdf60/mpdf.php');
 if(isset($_GET["orden_id"])){
@@ -129,6 +135,8 @@ if(isset($_GET["orden_id"])){
   $mpdf->debug = false;
   $mpdf->writeHTML("No hay orden para mostrar..");
   $mpdf->Output($orden_cliente.".pdf","I");
+}
+
 }
  ?>
 <!--  -->
