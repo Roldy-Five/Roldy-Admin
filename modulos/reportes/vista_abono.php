@@ -43,7 +43,7 @@ if(isset($_GET["abono_id"])){
         <table style="border-collapse:collapse;" border="1">
           <thead>
             <tr>
-              <th rowspan="6" colspan="2"  class="border"><img src="../../img/logo-roldyfive.png" width="200px" height="90px" alt=""></th>
+              <th rowspan="4" colspan="2"  class="border"><img src="../../img/logo-roldyfive.png" width="150px" height="90px" alt=""></th>
               
             </tr>
             <tr>
@@ -58,7 +58,7 @@ if(isset($_GET["abono_id"])){
             </tr>
             <tr>
               <th rowspan="2" class="border" colspan="2">Número de orden: </th>
-              <td rowspan="2" colspan="2">'.$orden.'</td>
+              <td rowspan="2" colspan="4">'.$orden.'</td>
             </tr>
             <tr style="border:1px solid white;">
               <td></td>
