@@ -63,13 +63,13 @@
 	    </div>
   	</div>
 	
-	<div id="fecha_modal" class="modal">
+	<div id="fecha_modal" class="modal" style="width: 450px">
 	    <div class="modal-content">
 		     <h4>Acualizar fecha de entrega</h4>
 		     <div class="row" id="principal">
 			     <form class="col s12" action=""  name="formulario">
 				     <div class="row">
-					      <div class="input-field col s6">
+					      <div class="input-field col s7">
 					          <input id="fecha_entrega" name="fecha_entrega" type="text" class="datepicker">
 					          <label for="Fecha">*Fcha de entrega</label>
 					      </div>
