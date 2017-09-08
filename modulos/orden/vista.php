@@ -3,6 +3,7 @@ session_start();
 if(!isset($_SESSION["usuario"])){
     header("Location:../.././index.php");
   }else{
+
 ///////Libreria https://mpdf.github.io/reference/mpdf-functions/output.html
   require_once ('../../mpdf60/mpdf.php');
 if(isset($_GET["orden_id"])){
@@ -126,6 +127,7 @@ if(isset($_GET["orden_id"])){
   $mpdf = new mPDF();
   $mpdf->debug = false;
   // print($html);
+  $mpdf->SetTitle($responsable);
   $mpdf->writeHTML($html);
   $mpdf->Output($orden_cliente."pdf","I");
 }else{
