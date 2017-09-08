@@ -61,15 +61,13 @@ if(isset($_GET["orden_id"])){
             padding-top: 15px;
           }
         </style>
+        
         <table style="border-collapse:collapse;" border="1">
           <thead>
             <tr>
-<<<<<<< HEAD
-              <th rowspan="7" colspan="2"  class="border"><img src="../../img/logo-roldyfive.png" width="200px" height="90px" alt=""></th>
-=======
-              <th rowspan="4" colspan="2"  class="border"><img src="../../img/logo-roldyfive.png" width="150px" height="90px" alt=""></th>
->>>>>>> a3c5a2ff9eeb80bef038322f6d5b4dc8a3862a4d
-              
+              <th rowspan="4" colspan="2"  class="border">
+                <img src="../../img/logo-roldyfive.png" width="200px" height="90px" alt="">
+              </th>
             </tr>
             <tr>
               <td colspan="4" align="center" height="80px">Ubicados en el barrio las margaritas</td>
@@ -83,7 +81,7 @@ if(isset($_GET["orden_id"])){
             </tr>
             <tr>
               <th class="border"  colspan="2">Responsable:</th>
-              <td colspan="2">'.ucwords($responsable).'</td>
+              <td colspan="4">'.ucwords($responsable).'</td>
             </tr>
             <tr>
               <th class="border" colspan="2">Número de orden: </th>
