@@ -18,6 +18,7 @@ ob_start();//para solucionar el problema con el redireccionamieto
 	
 	<script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="node_modules/sweetalert/dist/sweetalert.css">
+	<link rel="shortcut icon" href="img/logo-roldyfive.png"/>
 	<style type="text/css">
 		::-webkit-scrollbar-track
 		{
@@ -63,7 +64,7 @@ ob_start();//para solucionar el problema con el redireccionamieto
 			</ul>
 
 			<ul id="conf" class="dropdown-content">
-			<li><a href="index2.php?modulo=inicio&elemento=index.php"><i class="material-icons left large">person</i>Editar perfil</a></li>
+			<li><a href="index2.php?modulo=perfil&elemento=index.php"><i class="material-icons left large">person</i>Editar perfil</a></li>
 			<li><a href="index2.php?modulo=inicio&elemento=cerrar_sesion.php"><i class="material-icons left large">power_settings_new</i>Cerrar sesion</a></li>
 			<!--<li class="divider"></li>-->
 			</ul>
