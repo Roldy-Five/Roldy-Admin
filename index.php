@@ -11,6 +11,7 @@
 	<title>Roldy Five</title>
 	<link rel="stylesheet" type="text/css" href="css/materialize.css">
 	<link rel="stylesheet" type="text/css" href="css/iconos.css">
+	<link rel="shortcut icon" href="img/logo-roldyfive.png"/>
 </head>
 <body>
 	<div class="row" style="margin-top:100px;opacity:.7">

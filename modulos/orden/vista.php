@@ -64,7 +64,7 @@ if(isset($_GET["orden_id"])){
         <table style="border-collapse:collapse;" border="1">
           <thead>
             <tr>
-              <th rowspan="6" colspan="2"  class="border"><img src="../../img/logo-roldyfive.png" width="200px" height="90px" alt=""></th>
+              <th rowspan="7" colspan="2"  class="border"><img src="../../img/logo-roldyfive.png" width="200px" height="90px" alt=""></th>
               
             </tr>
             <tr>
@@ -72,6 +72,10 @@ if(isset($_GET["orden_id"])){
             </tr>
             <tr>
               <td colspan="4" align="center" height="40px">Teléfonos de contacto: 3127068685 / 6718133</td>
+            </tr>
+            <tr>
+              <th class="border"  colspan="2">Fecha de entrega:</th>
+              <td colspan="2">'.$fecha_entrega.'</td>
             </tr>
             <tr>
               <th class="border"  colspan="2">Responsable:</th>
