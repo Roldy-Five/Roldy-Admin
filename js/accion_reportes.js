@@ -26,31 +26,22 @@ $(document).ready(function() {
     closeOnSelect: false // Close upon selecting a date,
   });
 	$('#ver').click(function(event) {
-		var inicio = $('#inicio').val();
-		var final = $('#final').val();
-		if (inicio == "") {
-			$('#inicio').attr("style","border-bottom: 1px solid red");
-		}
-		else if (final == "") {
-			$('#inicio').attr("style","border-bottom: 1px solid gray");
-			$('#final').attr("style","border-bottom: 1px solid red");
-		}
-		else{
-		$('#inicio').attr("style","border-bottom: 1px solid gray");
-		$('#final').attr("style","border-bottom: 1px solid gray");
-		$.ajax({
-			url: 'modulos/reportes/reportes.php',
-			type: 'POST',
-			dataType: 'HTML',
-			data: {inicio:inicio, final:final},
-			// beforeSend:function(){
-			// 	$('#resultado').html('<div class="progress"><div class="indeterminate"></div></div>Estamos cargando su reporte..');
-			// }
-		})
-		.done(function(data) {
-			$('#resultado').html(data);
-		})	
-		}	
+		var year = $('#year').val();
+		var mes = $('#mesreport').val();
+
+			$.ajax({
+				url: 'modulos/reportes/reportes.php',
+				type: 'POST',
+				dataType: 'HTML',
+				data: {year:year, mes:mes},
+				// beforeSend:function(){
+				// 	$('#resultado').html('<div class="progress"><div class="indeterminate"></div></div>Estamos cargando su reporte..');
+				// }
+			})
+			.done(function(data) {
+				$('#resultado').html(data);
+			})	
+			
 	});
 });
 

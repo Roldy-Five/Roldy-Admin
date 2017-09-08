@@ -24,23 +24,40 @@
 <h3 class="text-center">Reportes del mes</h3>
 
  <div class="row">
- 	<div class="col s3">
- 		<label for="" >Fecha de inicio</label>
- 		<input type="text" class="datepicker" id="inicio" name="inicio">
- 	</div>
- 	<div class="col s3">
- 		<label for="" >Fecha final</label>
- 		<input type="text" class="datepicker" id="final" name="final">
- 	</div><br><br>
+  	<div class="input-field col m4">
+	    <select id="year">
+	      <option value="2017" selected>2017</option>
+	      <option value="2018">2018</option>
+	      <option value="2019">2019</option>
+	      <option value="2020">2020</option>
+	    </select>
+	    <label>Seleccionar año</label>
+  	</div>
+ 	<div class="input-field col m4">
+	    <select id="mesreport">
+	      <option value="enero">Enero</option>
+	      <option value="febrero">Febrero</option>
+	      <option value="abril">Abril</option>
+	      <option value="mayo">Mayo</option>
+	      <option value="Junio">Junio</option>
+	      <option value="Julio">Julio</option>
+	      <option value="Agosto">Agosto</option>
+	      <option value="Septiembreo">Septiembre</option>
+	      <option value="Octubre">Octubre</option>
+	      <option value="Noviembre">Noviembre</option>
+	      <option value="Diciembre">Diciembre</option>
+	    </select>
+	    <label>Seleccionar mes</label>
+  	</div>
  	<div class="col s3">
  		<button class="btn green" id="ver">Ver</button>
  	</div>
  </div>
-<center>
+
 <div class="row" id="resultado">
 
 
-</div></center>
+</div>
 	 <script src="js/jquery-3.2.1.min.js"></script>
 	 <script type="text/javascript" src="js/select2.js"></script>
 	 <script type="text/javascript" src="js/materialize.min.js"></script>

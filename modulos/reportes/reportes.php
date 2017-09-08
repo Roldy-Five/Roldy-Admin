@@ -1,12 +1,12 @@
 <?php 
 
 
-if (isset($_POST['inicio']) && isset($_POST['final'])) {
-	$inicio = $_POST['inicio'];
-	$final = $_POST['final'];
+if (isset($_POST['mes'])) {
+	$year = $_POST['year'];
+	$mes = $_POST['mes'];
 	$totalMes = "";
 	require_once ("../../conexion.php");
-	$query = "SELECT sum(abono) as total FROM abonos WHERE fecha_reporte >= '$inicio' AND fecha_reporte <= '$final'";
+	$query = "SELECT sum(abono) as total FROM abonos WHERE fecha_reporte LIKE '%$year%' AND fecha_reporte LIKE '%$mes%'";
 	$resultado = $conn->query($query);
 	while($row=$resultado->fetch_assoc()){
 		if ($row['total'] == "") {
@@ -23,7 +23,7 @@ if (isset($_POST['inicio']) && isset($_POST['final'])) {
 		  </div>
 		  <div class="card-stacked">
 		    <div class="card-content">
-		      <p>Entre el <span id="mes" align="justify"><b>'.$inicio.'</b></span> y el  <span align="justify"><b>'.$final.'</b></span> se han recibido <b>$'.number_format($totalMes).'</b> corespondientes a los trabajos realizados.</p>
+		      <p>En el mes de <span id="mes" align="justify"><b> '.$mes.'</b></span> del año <span align="justify"><b> '.$year.'</b></span> se han recibido <b>$'.number_format($totalMes).'</b> corespondientes a los trabajos realizados.</p>
 		    </div>
 		    <div class="card-action">
 		      <a href="#">Reporte mensual</a>
