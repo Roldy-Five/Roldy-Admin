@@ -57,10 +57,10 @@ if(isset($_GET["abono_id"])){
               <td colspan="2">'.ucwords($responsable).'</td>
             </tr>
             <tr>
-              <th class="border" colspan="2">Número de orden: </th>
+              <th rowspan="2" class="border" colspan="2">Número de orden: </th>
               <td rowspan="2" colspan="2">'.$orden.'</td>
             </tr>
-            <tr>
+            <tr style="border:1px solid white;">
               <td></td>
             </tr>
             
@@ -88,7 +88,9 @@ if(isset($_GET["abono_id"])){
           <a>------------------------------------------------------------------------------------------------------------------------</a>';
   $mpdf = new mPDF();
   $mpdf->debug = false;
+  //$mpdf->SetProtection(array("copy","print","modify","annot-forms","fill-forms","extract","assemble","print-highres"), 'UserPassword', '1077444356');  //Establecer una contraseña para el documento y permisos para el usuario dentro del array
   // print($html);
+  $mpdf->SetTitle($responsable);
   $mpdf->writeHTML($html);
   $mpdf->Output($abono_id."pdf","I");
 }else{
