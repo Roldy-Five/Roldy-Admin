@@ -43,8 +43,8 @@ if(isset($_GET["abono_id"])){
         <table style="border-collapse:collapse;" border="1">
           <thead>
             <tr>
-              <th rowspan="4" colspan="2"  class="border"><img src="../../img/logo-roldyfive.png" width="150px" height="90px" alt=""></th>
-              
+              <th rowspan="4" colspan="2"  class="border"><img src="../../img/logo-roldyfive.png" width="150px" height="90px" alt="">
+              </th>
             </tr>
             <tr>
               <td colspan="4" align="center" height="80px">Ubicados en el barrio las margaritas</td>

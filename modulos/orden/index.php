@@ -15,18 +15,18 @@
 <body>
 <div>
 	<!-- Modal para los descuentos o recargos -->
-<div id="descuentos_recargos" class="modal">
+<div id="descuentos_recargos" class="modal" style="width: 500px">
 	    <div class="modal-content">
 		     <h4>Descuentos o sobrecargos</h4>
 		     <div class="row" id="principal">
 				     <div class="row">
-					      <div class="input-field col s6">
+					      <div class="input-field col s5">
 					         <select id="desc_rec">
 					         	<option value="1">Recargos</option>
 					         	<option value="2">Descuentos</option>
 					         </select>
 					      </div>
-					      <div class="input-field col s6">
+					      <div class="input-field col s5">
 					          <input id="valor" name="valor" type="text" class="validate solo-numero limpiar">
 					          <label for="valor">* Valor</label>
 					      </div>

@@ -61,6 +61,7 @@ if(isset($_GET["orden_id"])){
             padding-top: 15px;
           }
         </style>
+        
         <table style="border-collapse:collapse;" border="1">
           <thead>
             <tr>
@@ -78,7 +79,7 @@ if(isset($_GET["orden_id"])){
             </tr>
             <tr>
               <th class="border"  colspan="2">Responsable:</th>
-              <td colspan="2">'.ucwords($responsable).'</td>
+              <td colspan="4">'.ucwords($responsable).'</td>
             </tr>
             <tr>
               <th class="border" colspan="2">Número de orden: </th>
