@@ -64,7 +64,11 @@ if(isset($_GET["orden_id"])){
         <table style="border-collapse:collapse;" border="1">
           <thead>
             <tr>
+<<<<<<< HEAD
               <th rowspan="7" colspan="2"  class="border"><img src="../../img/logo-roldyfive.png" width="200px" height="90px" alt=""></th>
+=======
+              <th rowspan="4" colspan="2"  class="border"><img src="../../img/logo-roldyfive.png" width="150px" height="90px" alt=""></th>
+>>>>>>> a3c5a2ff9eeb80bef038322f6d5b4dc8a3862a4d
               
             </tr>
             <tr>
@@ -83,11 +87,11 @@ if(isset($_GET["orden_id"])){
             </tr>
             <tr>
               <th class="border" colspan="2">Número de orden: </th>
-              <td colspan="2">'.$orden_id.'</td>
+              <td colspan="4">'.$orden_id.'</td>
             </tr>
             <tr>
               <th class="border" colspan="2">Estado de la orden: </th>
-              <td class="'.$clase.'" colspan="2">'.$estado_pago.'</td>
+              <td class="'.$clase.'" colspan="4">'.$estado_pago.'</td>
             </tr>
             <tr>
               <th class="border">Nº</th>
