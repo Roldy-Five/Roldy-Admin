@@ -42,7 +42,7 @@
 	      <option value="Junio">Junio</option>
 	      <option value="Julio">Julio</option>
 	      <option value="Agosto">Agosto</option>
-	      <option value="Septiembreo">Septiembre</option>
+	      <option value="Septiembre">Septiembre</option>
 	      <option value="Octubre">Octubre</option>
 	      <option value="Noviembre">Noviembre</option>
 	      <option value="Diciembre">Diciembre</option>

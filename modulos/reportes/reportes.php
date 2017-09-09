@@ -23,7 +23,7 @@ if (isset($_POST['mes'])) {
 		  </div>
 		  <div class="card-stacked">
 		    <div class="card-content">
-		      <p>En el mes de <span id="mes" align="justify"><b> '.$mes.'</b></span> del año <span align="justify"><b> '.$year.'</b></span> se han recibido <b>$'.number_format($totalMes).'</b> corespondientes a los trabajos realizados.</p>
+		      <p>En el mes de <span id="mes" align="justify"><b> '.$mes.'</b></span> del año <span align="justify"><b> '.$year.'</b></span> se han recibido <b>$' .number_format($totalMes).'</b> corespondientes a los trabajos realizados.</p>
 		    </div>
 		    <div class="card-action">
 		      <a href="#">Reporte mensual</a>
