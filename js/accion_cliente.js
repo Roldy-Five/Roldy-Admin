@@ -10,8 +10,7 @@ $(document).ready(function(){
 	 $("#apellidos1").focus();
 	 $("#direccion1").focus();
 	 $("#telefono_11").focus();
-	 $("#telefono_21").focus();
-		
+	 $("#telefono_21").focus();	
 })
 
 function buscar_datos(consulta){
@@ -265,9 +264,6 @@ function eliminar(id,identificacion){
 	    // swal("Cancelled", "Your imaginary file is safe :)", "error");
 	  }
 	});
-
-
-
 
 	// if(confirm('¿Está seguro que desea eliminar el registro con identificación ' + identificacion +' ?')){
 	// //setTimeout("document.location=document.location");
